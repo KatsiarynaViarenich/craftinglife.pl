@@ -86,6 +86,11 @@ const projectsData = [
     images: [
       "/images/commercial/1/1.jpg",
       "/images/commercial/1/2.jpg",
+      "/images/commercial/1/3.jpg",
+      "/images/commercial/1/4.jpg",
+      "/images/commercial/1/5.jpg",
+      "/images/commercial/1/6.jpg"
+
     ],
   },
   {
@@ -106,8 +111,7 @@ const projectsData = [
     category: "commercial" as const,
     year: "2024",
     images: [
-      "/images/commercial/3/1.jpg",
-      "/images/commercial/3/2.jpg",
+      "/images/commercial/3/1.jpg"
     ],
   },
 
