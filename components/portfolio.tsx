@@ -64,6 +64,7 @@ const projectsData = [
     images: [
       "/images/residential/5/1.jpg",
       "/images/residential/5/2.jpg",
+      "/images/residential/5/3.jpg",
     ],
   },
   {
