@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { siteUrl, siteName, siteDescription, siteImage } from '@/lib/site'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -14,8 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'ALT-remonty | Wykończenia Mieszkań',
-  description: 'Profesjonalne wykończenie mieszkań pod klucz. 13 lat doświadczenia, 200+ zrealizowanych projektów. 2 lata rękojmi, wysoka jakość i terminowość.',
+  metadataBase: new URL(siteUrl),
+  title: siteName,
+  description: siteDescription,
   keywords: ['wykończenia mieszkań', 'remonty', 'pod klucz', 'alt-remonty', 'budownictwo', 'projektowanie wnętrz', 'wrocław', 'wrocław remonty', 'wrocław wykończenia mieszkań'],
   robots: {
     index: true,
@@ -23,17 +25,17 @@ export const metadata: Metadata = {
   },
   generator: 'v0.app',
   openGraph: {
-    title: 'ALT-remonty | Wykończenia Mieszkań',
-    description: 'Profesjonalne wykończenie mieszkań pod klucz. 13 lat doświadczenia, 200+ zrealizowanych projektów. 2 lata rękojmi, wysoka jakość i terminowość.',
+    title: siteName,
+    description: siteDescription,
     type: 'website',
     locale: 'pl_PL',
-    images: ['/icon.png'],
+    images: [siteImage],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ALT-remonty | Wykończenia Mieszkań',
-    description: 'Profesjonalne wykończenie mieszkań pod klucz. 13 lat doświadczenia, 200+ zrealizowanych projektów. 2 lata rękojmi, wysoka jakość i terminowość.',
-    images: ['/icon.png'],
+    title: siteName,
+    description: siteDescription,
+    images: [siteImage],
   },
   icons: {
     icon: [

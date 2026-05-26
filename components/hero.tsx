@@ -65,7 +65,7 @@ export function Hero() {
       </div>
 
       {/* Stats Bar */}
-      <div className="relative md:absolute md:bottom-0 left-0 right-0 z-20 bg-background/95 backdrop-blur-sm border-t border-border/10 md:border-t-0">
+      <div className="relative left-0 right-0 z-20 bg-background/95 backdrop-blur-sm border-t border-border/10">
         <div className="container mx-auto px-6 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">

@@ -19,7 +19,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (saved && saved in translations) {
       setLanguageState(saved);
     } else {
-      // Default to "pl" as requested by user
       setLanguageState("pl");
     }
   }, []);
