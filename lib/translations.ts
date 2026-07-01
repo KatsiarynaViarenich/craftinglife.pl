@@ -15,7 +15,7 @@ export const translations = {
             "about": "O Nas",
             "testimonials": "Opinie",
             "contact": "Kontakt",
-            "getQuote": "Darmowa Wycena"
+            "getQuote": "Zadzwoń do nas"
         },
         "hero": {
             "tagline": "Crafting Life - Wykończenia Mieszkań",
@@ -23,7 +23,8 @@ export const translations = {
             "titleHighlight": "Usługi budowlane i wykończeniowe",
             "description": "Najwyższa jakość, terminowość i profesjonalne doradztwo. Zapewniamy 2 lata rękojmi na nasze usługi, dbając o każdy szczegół Twojego mieszkania.",
             "description2": "Kochamy to co robimy.",
-            "phone": "+48 500 500 500",
+            "phone": "+48 731 997 440",
+            "location": "Wrocław i okolice",
             "cta": "Skontaktuj się z nami",
             "ctaSecondary": "Nasze realizacje",
             "stats": {
@@ -267,13 +268,16 @@ export const translations = {
             "about": "Про нас",
             "testimonials": "Відгуки",
             "contact": "Контакти",
-            "getQuote": "Безкоштовна оцінка"
+            "getQuote": "Подзвоніть нам"
         },
         "hero": {
             "tagline": "Crafting Life - Оздоблення Квартир",
-            "title": "Ваш Інтер'єр, ",
-            "titleHighlight": "Наша Точність",
+            "title": "Crafting Life",
+            "titleHighlight": "Будівельні та оздоблювальні послуги",
             "description": "Найвища якість, дотримання термінів та професійні консультації. Ми надаємо 2 роки гарантії на наші послуги, дбаючи про кожну деталь вашої квартири.",
+            "description2": "Ми любимо те, що робимо.",
+            "phone": "+48 731 997 440",
+            "location": "Вроцлав і околиці",
             "cta": "Зв'яжіться з нами",
             "ctaSecondary": "Наші роботи",
             "stats": {
@@ -424,6 +428,13 @@ export const translations = {
                     "author": "Задоволений клієнт",
                     "role": "Індивідуальний клієнт",
                     "location": "Оздоблення інтер'єру"
+                },
+                
+                "review4": {
+                    "text": "Команда пана Андрія виконала ремонт нашої кухні ґрунтовно і дбайливо — плитка покладена рівно і естетично, а фарбування розпиленням дало чудовий ефект. Всі роботи були виконані з увагою до деталей, а виправлення, які виникли виключно через нашу помилку (ми забули одну розетку), були зроблені без жодних нарікань і в чудовій атмосфері. Під час ремонту ми також вирішили частково замінити електричну мережу — пан Андрій і його команда підійшли до цього завдання оперативно та професійно, без затримок. Бригада не лише добросовісна, а й дуже привітна, що зробило співпрацю справжнім задоволенням. Рекомендую.",
+                    "author": "Павло",
+                    "role": "Власник квартири",
+                    "location": "Ремонт кухні"
                 }
             }
         },
@@ -466,6 +477,7 @@ export const translations = {
                 "call": "Зателефонуйте",
                 "callHours": "Пн-Сб: 8:00 - 18:00",
                 "email": "Напишіть нам",
+                "location": "Wrocław and surrounding area",
                 "emailResponse": "Відповідаємо якнайшвидше"
             }
         },
@@ -495,13 +507,16 @@ export const translations = {
             "about": "О нас",
             "testimonials": "Отзывы",
             "contact": "Контакты",
-            "getQuote": "Бесплатная оценка"
+            "getQuote": "Позвоните нам"
         },
         "hero": {
             "tagline": "Crafting Life - Отделка Квартир",
-            "title": "Ваш Интерьер, ",
-            "titleHighlight": "Наша Точность",
+            "title": "Crafting Life",
+            "titleHighlight": "Строительно-отделочные услуги",
             "description": "Высочайшее качество, строгое соблюдение сроков и профессиональные консультации. Мы предоставляем 2 года гарантии на наши услуги, заботясь о каждой детали вашей квартиры.",
+            "description2": "Мы любим то, что делаем.",
+            "phone": "+48 731 997 440",
+            "location": "Вроцлав и окрестности",
             "cta": "Свяжитесь с нами",
             "ctaSecondary": "Наши работы",
             "stats": {
@@ -652,6 +667,12 @@ export const translations = {
                     "author": "Довольный клиент",
                     "role": "Индивидуальный клиент",
                     "location": "Отделка интерьера"
+                },
+                "review4": {
+                    "text": "Команда Анджея выполнила ремонт нашей кухни тщательно и аккуратно — плитка уложена ровно и эстетично, а покраска распылением дала отличный результат. Все работы были выполнены с вниманием к деталям, а исправления, потребовавшиеся исключительно по нашей вине (мы забыли одну розетку), были выполнены без каких-либо нареканий и в прекрасной атмосфере. Во время ремонта мы также решили частично заменить электропроводку — господин Анджей и его команда подошли к этой задаче оперативно и профессионально, без задержек. Бригада не только добросовестна, но и очень дружелюбна, что сделало сотрудничество настоящим удовольствием. Настоятельно рекомендую.",
+                    "author": "Павел",
+                    "role": "Владелец квартиры",
+                    "location": "Ремонт кухни"
                 }
             }
         },
@@ -667,6 +688,7 @@ export const translations = {
                 "phone": "Номер телефона",
                 "projectType": "Тип заказа",
                 "projectTypes": {
+                "location": "Вроцлав и окрестности",
                     "select": "Выберите тип",
                     "residential": "Отделка от застройщика",
                     "commercial": "Генеральный ремонт",
@@ -723,13 +745,16 @@ export const translations = {
             "about": "About",
             "testimonials": "Testimonials",
             "contact": "Contact",
-            "getQuote": "Get Quote"
+            "getQuote": "Call Us"
         },
         "hero": {
             "tagline": "Crafting Life - Apartment Finishing",
-            "title": "Your Interior, ",
-            "titleHighlight": "Our Precision",
+            "title": "Crafting Life",
+            "titleHighlight": "Construction and finishing services",
             "description": "Highest quality, timely delivery, and professional advice. We provide a 2-year warranty on our services, taking care of every detail of your apartment.",
+            "description2": "We love what we do.",
+            "phone": "+48 731 997 440",
+            "location": "Wrocław and surrounding area",
             "cta": "Contact Us",
             "ctaSecondary": "Our Work",
             "stats": {
@@ -880,6 +905,12 @@ export const translations = {
                     "author": "Happy Client",
                     "role": "Individual Client",
                     "location": "Interior Finishing"
+                },
+                "review4": {
+                    "text": "Mr. Andrzej's team completed the renovation of our kitchen thoroughly and carefully — the tiles were laid evenly and neatly, and the spray painting produced a great finish. All work was carried out with attention to detail, and the fixes required solely because of our oversight (we forgot one outlet) were done without complaint and in a great atmosphere. During the renovation we also decided to partially replace the electrical wiring — Mr. Andrzej and his team tackled it efficiently and professionally, without delays. The crew is not only reliable but also very friendly, which made the collaboration a real pleasure. I definitely recommend them.",
+                    "author": "Paweł",
+                    "role": "Apartment Owner",
+                    "location": "Kitchen Renovation"
                 }
             }
         },
@@ -895,6 +926,7 @@ export const translations = {
                 "phone": "Phone Number",
                 "projectType": "Project Type",
                 "projectTypes": {
+                "location": "Wrocław and surrounding area",
                     "select": "Select type",
                     "residential": "Developer Finishing",
                     "commercial": "General Overhaul",
@@ -945,4 +977,5 @@ export const translations = {
         }
     }
 };
+
 export type Translations = typeof translations.pl;

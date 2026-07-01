@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: siteName,
   description: siteDescription,
-  keywords: ['wykończenia mieszkań', 'remonty', 'pod klucz', 'craftinglife', 'budownictwo', 'projektowanie wnętrz', 'wrocław', 'wrocław remonty', 'wrocław wykończenia mieszkań'],
+  keywords: ['wykończenia mieszkań', 'remonty', 'pod klucz', 'craftinglife', 'crafting life', 'budownictwo', 'usługi budowlane', 'wrocław', 'wrocław remonty', 'wrocław wykończenia mieszkań'],
   robots: {
     index: true,
     follow: true,
@@ -41,19 +41,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon.png',
+        url: '/icon.svg',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon.png',
+        url: '/icon.svg',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.png',
+        url: '/icon.svg',
         type: 'image/png',
       },
     ],
-    apple: '/icon.png',
+    apple: '/icon.svg',
   },
 }
 

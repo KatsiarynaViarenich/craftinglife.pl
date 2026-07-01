@@ -45,7 +45,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-background/90 text-base md:text-lg mb-10 font-medium tracking-wide">
-            <span>Wrocław i okolice </span>
+            <span>{t.hero.location}</span>
             {/* <span> </span> */}
 
             <span className="w-1.5 h-1.5 rounded-full bg-background/95 shrink-0"></span>

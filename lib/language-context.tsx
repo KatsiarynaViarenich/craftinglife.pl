@@ -13,6 +13,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("pl");
+  const [pendingLanguage, setPendingLanguage] = useState<Language | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("language") as Language | null;
@@ -27,16 +29,34 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = language;
   }, [language]);
 
+  useEffect(() => {
+    if (!isTransitioning || pendingLanguage === null) return;
+
+    // use an opacity cross-fade like testimonials but keep a short timing (300ms)
+    const fadeOutId = window.setTimeout(() => {
+      setLanguageState(pendingLanguage);
+      localStorage.setItem("language", pendingLanguage);
+      setPendingLanguage(null);
+      // small delay to allow DOM update before fading back in
+      window.setTimeout(() => setIsTransitioning(false), 10);
+    }, 300);
+
+    return () => window.clearTimeout(fadeOutId);
+  }, [isTransitioning, pendingLanguage]);
+
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem("language", lang);
+    if (lang === language || pendingLanguage === lang) return;
+    setPendingLanguage(lang);
+    setIsTransitioning(true);
   };
 
   const t = translations[language];
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      {children}
+      <div className={`transition-opacity duration-300 ease-in-out ${isTransitioning ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+        {children}
+      </div>
     </LanguageContext.Provider>
   );
 }
