@@ -442,7 +442,7 @@ export const translations = {
             "tagline": "Контакти",
             "title": "Поговоримо про ваш ",
             "titleHighlight": "Проект",
-            "description": "Телефонуйте або пишіть нам! Ми з радістю проконсультуємо та домовимося про безкоштовну оцінку.",
+            "description": "Телефонуйте або пишіть нам! Ми з радістю проконсультуємо та домовимося про оцінку.",
             "form": {
                 "firstName": "Ім'я",
                 "lastName": "Прізвище",
@@ -680,7 +680,7 @@ export const translations = {
             "tagline": "Контакты",
             "title": "Поговорим о вашем ",
             "titleHighlight": "Проекте",
-            "description": "Звоните или пишите нам! Мы с радостью проконсультируем и договоримся о бесплатной оценке.",
+            "description": "Звоните или пишите нам! Мы с радостью проконсультируем и договоримся о оценке.",
             "form": {
                 "firstName": "Имя",
                 "lastName": "Фамилия",
@@ -918,7 +918,7 @@ export const translations = {
             "tagline": "Contact",
             "title": "Let's Talk About Your ",
             "titleHighlight": "Project",
-            "description": "Call or write to us! We'd be happy to advise and arrange a free quote.",
+            "description": "Call or write to us! We'd be happy to advise and arrange a quote.",
             "form": {
                 "firstName": "First Name",
                 "lastName": "Last Name",
