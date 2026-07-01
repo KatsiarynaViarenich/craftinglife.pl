@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
 
           <div className="p-6 bg-secondary mt-12 border-l-4 border-primary">
             <h3 className="font-semibold text-foreground mb-2">Masz pytania dotyczące swoich danych?</h3>
-            <p>Skontaktuj się z naszym Inspektorem Ochrony Danych pod adresem: kontakt@crafting-life.pl</p>
+            <p>Skontaktuj się z naszym Inspektorem Ochrony Danych pod adresem: kontakt@craftinglife.pl</p>
           </div>
         </div>
       </div>

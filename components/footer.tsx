@@ -96,7 +96,7 @@ export function Footer() {
               <li>NIP: 8992579035</li>
               <li className="pt-2">+48 731 997 440 (PL)</li>
               <li>+48 695 846 241 (UA, RU)</li>
-              <li>kontakt@crafting-life.pl</li>
+              <li>kontakt@craftinglife.pl</li>
             </ul>
           </div>
         </div>

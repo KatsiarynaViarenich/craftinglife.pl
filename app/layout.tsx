@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Serif_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { siteUrl, siteName, siteDescription, siteImage } from '@/lib/site'
+import { Providers } from '@/app/providers'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: siteName,
   description: siteDescription,
-  keywords: ['wykończenia mieszkań', 'remonty', 'pod klucz', 'crafting-life', 'budownictwo', 'projektowanie wnętrz', 'wrocław', 'wrocław remonty', 'wrocław wykończenia mieszkań'],
+  keywords: ['wykończenia mieszkań', 'remonty', 'pod klucz', 'craftinglife', 'budownictwo', 'projektowanie wnętrz', 'wrocław', 'wrocław remonty', 'wrocław wykończenia mieszkań'],
   robots: {
     index: true,
     follow: true,
@@ -64,7 +65,9 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${dmSerif.variable} ${inter.variable} bg-background`}>
       <body className="font-sans antialiased">
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
