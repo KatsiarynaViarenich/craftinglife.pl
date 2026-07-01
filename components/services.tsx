@@ -7,13 +7,13 @@ type ServiceKey = "residential" | "commercial" | "renovation" | "projectManageme
 
 const servicesData: { key: ServiceKey; icon: LucideIcon }[] = [
   { key: "residential", icon: Home },              // Wykończenia pod klucz
-  { key: "renovation", icon: Paintbrush },         // Gładzie i malowanie
-  { key: "commercial", icon: LayoutGrid },         // Prace Glazurnicze (płytki)
+  { key: "glamping", icon: Tent },                 // Glamping domki
   { key: "projectManagement", icon: Zap },         // Instalacje elektr. i hydr.
   { key: "drywall", icon: Hammer },                // Płyty G-K i murowanie
+  { key: "renovation", icon: Paintbrush },         // Gładzie i malowanie
+  { key: "commercial", icon: LayoutGrid },         // Prace Glazurnicze (płytki)
   { key: "design", icon: Layers },                 // Podłogi i panele
   { key: "terraces", icon: Sun },                  // Tarasy ogrodowe
-  { key: "glamping", icon: Tent },                 // Glamping domki
   { key: "consulting", icon: Lightbulb },          // Doradztwo
 ]
 

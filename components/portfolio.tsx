@@ -218,11 +218,11 @@ export function Portfolio() {
                   </div>
 
                   {/* Project Info Below Image */}
-                  <div className="bg-card pt-4 pb-2">
+                  <div className="bg-card px-4 pt-4 pb-2">
                     <p className="text-primary text-[10px] font-bold uppercase tracking-widest mb-1">
                       {t.portfolio.filters[project.category]}
                     </p>
-                    <h3 className="font-serif text-xl text-foreground line-clamp-1">
+                    <h3 className="font-serif text-lg text-foreground line-clamp-1">
                       {projectTranslation.title}
                     </h3>
                   </div>

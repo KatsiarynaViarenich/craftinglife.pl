@@ -130,6 +130,22 @@ export const translations = {
                 "terraces": {
                     "title": "Tarasy Ogrodowe",
                     "description": "Kompleksowe wykonawstwo tarasów drewnianych."
+                },
+                "kitchens": {
+                    "title": "Remonty Kuchni",
+                    "description": "Kompleksowe remonty kuchni z układaniem płytek, malowaniem i instalacją urządzeń."
+                },
+                "painting": {
+                    "title": "Gładzenie i Malowanie Profilami",
+                    "description": "Gładzenie metodą mokrą, szpachlowanie, malowanie natryskowe i pędzlem."
+                },
+                "cleaning": {
+                    "title": "Sprzątanie Powykonawcze",
+                    "description": "Profesjonalne sprzątanie po wykonaniu wszystkich prac remontowych."
+                },
+                "consultations": {
+                    "title": "Konsultacje i Wyceny",
+                    "description": "Bezpłatne wyceny, konsultacje projektowe i pomoc w doborze materiałów."
                 }
             }
         },
@@ -171,9 +187,15 @@ export const translations = {
                 },
                 "review3": {
                     "text": "Jestem bardzo zadowolony ze współpracy z firmą Crafting Life, która położyła u mnie nową instalację elektryczną, oraz gładź i pomalowali ściany.\nProfesjonalne podejście do klienta, pomoc na każdym etapie remontu. Ekspresowa obsługa, jakość na najwyższym poziomie, z której jestem bardzo zadowolony. Świetny i zgrany zespół.\nDziękuję za współpracę. :)",
-                    "author": "Zadowolony Klient",
+                    "author": "Jacek W.",
                     "role": "Właściciel Mieszkania",
-                    "location": "Jacek W."
+                    "location": "Instalacja Elektryczna i Malowanie"
+                },
+                "review4": {
+                    "text": "Ekipa pana Andrzeja wykonała remont naszej kuchni solidnie i starannie - płytki położone równo i estetycznie a malowanie natryskowe dało swietny efekt. Wszystkie prace zostały zrealizowane z dbałością o szczegóły, a poprawki, które wynikały wyłącznie z naszej winy (wyleciało nam z głowy jedno gniazdko), zostały wykonane bez żadnego marudzenia i w świetnej atmosferze. W trakcie remontu zdecydowaliśmy się dodatkowo na częściową wymianę instalacji elektrycznej - pan Andrzej i jego zespół podeszli do tego zadania sprawnie i fachowo, bez opóźnień. Ekipa jest nie tylko rzetelna, ale i bardzo przyjazna, co sprawia, że współpraca była czystą przyjemnością. Zdecydowanie polecam",
+                    "author": "Paweł",
+                    "role": "Właściciel Mieszkania",
+                    "location": "Remont Kuchni"
                 }
             }
         },

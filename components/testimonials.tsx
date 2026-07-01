@@ -5,9 +5,9 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/language-context"
 
-type ReviewKey = "review1" | "review2" | "review3"
+type ReviewKey = "review1" | "review2" | "review3" | "review4"
 
-const reviewKeys: ReviewKey[] = ["review1", "review2", "review3"]
+const reviewKeys: ReviewKey[] = ["review1", "review2", "review3", "review4"]
 
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -30,7 +30,7 @@ export function Testimonials() {
         <div className="text-center mb-16">
           <p className="text-primary-foreground/80 uppercase tracking-widest text-sm mb-4">{t.testimonials.tagline}</p>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground mb-6">
-            {t.testimonials.title} <span className="opacity-80">{t.testimonials.titleHighlight}</span>
+            {t.testimonials.title} <span className="">{t.testimonials.titleHighlight}</span>
           </h2>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto leading-relaxed">
             {t.testimonials.description}
@@ -59,7 +59,7 @@ export function Testimonials() {
                 ))}
               </div>
               
-              <div className="flex items-center justify-between mt-auto pt-8 border-t border-primary-foreground/10">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0 mt-auto pt-8 border-t border-primary-foreground/10">
                 <div>
                   <p className="font-serif text-xl text-primary-foreground">
                     {t.testimonials.reviews[reviewKeys[currentIndex]].author}
