@@ -77,12 +77,12 @@ export const translations = {
                     "description": "Wykończenie łazienki z dbałością o każdy detal."
                 },
                 "7": {
-                    "title": "Łazienka pod Wynajem",
-                    "description": "Szybkie wykończenie łazienki pod wynajem."
+                    "title": "Praktyczna Łazienka",
+                    "description": "Szybkie wykończenie łazienki."
                 },
                 "8": {
-                    "title": "Łazienki pod Wynajem",
-                    "description": "Wykończenie 5 łazienek w parafii."
+                    "title": "Łazienki w Parafii",
+                    "description": "Wykończenie 11 łazienek w parafii."
                 },
                 "9": {
                     "title": "Elektryka w Hotelu",
@@ -330,12 +330,12 @@ export const translations = {
                     "description": "Оздоблення ванної кімнати з увагою до кожної деталі."
                 },
                 "7": {
-                    "title": "Ванна кімната під оренду",
-                    "description": "Швидке оздоблення ванної кімнати під оренду."
+                    "title": "Практична ванна кімната",
+                    "description": "Швидке оздоблення ванної кімнати."
                 },
                 "8": {
-                    "title": "Ванні кімнати під оренду",
-                    "description": "Оздоблення 5 ванних кімнат у парафії."
+                    "title": "Ванні кімнати в парафії",
+                    "description": "Оздоблення 11 ванних кімнат у парафії."
                 },
                 "9": {
                     "title": "Електромонтаж у готелі",
@@ -429,7 +429,7 @@ export const translations = {
                     "role": "Індивідуальний клієнт",
                     "location": "Оздоблення інтер'єру"
                 },
-                
+
                 "review4": {
                     "text": "Команда пана Андрія виконала ремонт нашої кухні ґрунтовно і дбайливо — плитка покладена рівно і естетично, а фарбування розпиленням дало чудовий ефект. Всі роботи були виконані з увагою до деталей, а виправлення, які виникли виключно через нашу помилку (ми забули одну розетку), були зроблені без жодних нарікань і в чудовій атмосфері. Під час ремонту ми також вирішили частково замінити електричну мережу — пан Андрій і його команда підійшли до цього завдання оперативно та професійно, без затримок. Бригада не лише добросовісна, а й дуже привітна, що зробило співпрацю справжнім задоволенням. Рекомендую.",
                     "author": "Павло",
@@ -569,12 +569,12 @@ export const translations = {
                     "description": "Отделка ванной комнаты с вниманием к каждой детали."
                 },
                 "7": {
-                    "title": "Ванная комната под аренду",
-                    "description": "Быстрая отделка ванной комнаты под аренду."
+                    "title": "Практичная ванная комната",
+                    "description": "Быстрая отделка ванной комнаты."
                 },
                 "8": {
-                    "title": "Ванные комнаты под аренду",
-                    "description": "Отделка 5 ванных комнат в приходе."
+                    "title": "Ванные комнаты в приходе",
+                    "description": "Отделка 11 ванных комнат в приходе."
                 },
                 "9": {
                     "title": "Электромонтаж в отеле",
@@ -688,7 +688,7 @@ export const translations = {
                 "phone": "Номер телефона",
                 "projectType": "Тип заказа",
                 "projectTypes": {
-                "location": "Вроцлав и окрестности",
+                    "location": "Вроцлав и окрестности",
                     "select": "Выберите тип",
                     "residential": "Отделка от застройщика",
                     "commercial": "Генеральный ремонт",
@@ -807,12 +807,12 @@ export const translations = {
                     "description": "Bathroom finishing with attention to every detail."
                 },
                 "7": {
-                    "title": "Bathroom for Rent",
-                    "description": "Fast bathroom finishing for rent."
+                    "title": "Practical Bathroom",
+                    "description": "Quick bathroom finishing."
                 },
                 "8": {
-                    "title": "Bathrooms for Rent",
-                    "description": "Finishing of 5 bathrooms in a parish."
+                    "title": "Parish Bathrooms",
+                    "description": "Finishing 11 bathrooms in the parish."
                 },
                 "9": {
                     "title": "Electrical Works in a Hotel",
@@ -926,7 +926,7 @@ export const translations = {
                 "phone": "Phone Number",
                 "projectType": "Project Type",
                 "projectTypes": {
-                "location": "Wrocław and surrounding area",
+                    "location": "Wrocław and surrounding area",
                     "select": "Select type",
                     "residential": "Developer Finishing",
                     "commercial": "General Overhaul",
