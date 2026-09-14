@@ -12,11 +12,11 @@ export function Header() {
   const { t } = useLanguage()
 
   const navLinks = [
-    { href: "#projects", label: t.nav.portfolio },
-    { href: "#services", label: t.nav.services },
-    { href: "#about", label: t.nav.about },
-    { href: "#testimonials", label: t.nav.testimonials },
-    { href: "#contact", label: t.nav.contact },
+    { href: "/#projects", label: t.nav.portfolio },
+    { href: "/#services", label: t.nav.services },
+    { href: "/#about", label: t.nav.about },
+    { href: "/#testimonials", label: t.nav.testimonials },
+    { href: "/#contact", label: t.nav.contact },
   ]
 
   return (
@@ -42,7 +42,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
           <Button asChild className="uppercase tracking-wide">
-            <Link href="#contact">{t.nav.getQuote}</Link>
+            <Link href="/#contact">{t.nav.getQuote}</Link>
           </Button>
         </div>
 
@@ -74,7 +74,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild className="uppercase tracking-wide mt-4">
-              <Link href="#contact">{t.nav.getQuote}</Link>
+              <Link href="/#contact">{t.nav.getQuote}</Link>
             </Button>
           </div>
         </div>

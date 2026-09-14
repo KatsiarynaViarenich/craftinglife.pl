@@ -14,21 +14,21 @@ export function Footer() {
 
   const footerLinks = {
     services: [
-      { label: t.services.items.residential.title, href: "#services" },
-      { label: t.services.items.glamping.title, href: "#services" },
-      { label: t.services.items.projectManagement.title, href: "#services" },
-      { label: t.services.items.drywall.title, href: "#services" },
-      { label: t.services.items.renovation.title, href: "#services" },
-      { label: t.services.items.commercial.title, href: "#services" },
-      { label: t.services.items.design.title, href: "#services" },
-      { label: t.services.items.terraces.title, href: "#services" },
-      { label: t.services.items.consulting.title, href: "#services" },
+      { label: t.services.items.residential.title, href: "/#services" },
+      { label: t.services.items.glamping.title, href: "/#services" },
+      { label: t.services.items.projectManagement.title, href: "/#services" },
+      { label: t.services.items.drywall.title, href: "/#services" },
+      { label: t.services.items.renovation.title, href: "/#services" },
+      { label: t.services.items.commercial.title, href: "/#services" },
+      { label: t.services.items.design.title, href: "/#services" },
+      { label: t.services.items.terraces.title, href: "/#services" },
+      { label: t.services.items.consulting.title, href: "/#services" },
     ],
     company: [
-      { label: t.nav.about, href: "#about" },
-      { label: t.nav.portfolio, href: "#projects" },
-      { label: t.nav.testimonials, href: "#testimonials" },
-      { label: t.nav.contact, href: "#contact" },
+      { label: t.nav.about, href: "/#about" },
+      { label: t.nav.portfolio, href: "/#projects" },
+      { label: t.nav.testimonials, href: "/#testimonials" },
+      { label: t.nav.contact, href: "/#contact" },
     ],
   }
 

@@ -50,7 +50,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setIsTransitioning(true);
   };
 
-  const t = translations[language];
+  const t = translations[language] as unknown as Translations;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

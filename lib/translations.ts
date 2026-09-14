@@ -259,6 +259,48 @@ export const translations = {
                 "terms": "Regulamin",
                 "sitemap": "Mapa Strony"
             }
+        },
+        "termsPage": {
+            "title": "Regulamin",
+            "sections": {
+                "1": {
+                    "title": "1. Postanowienia wstępne",
+                    "content": "Niniejszy regulamin określa zasady korzystania z funkcjonalności dostępnych na stronie internetowej firmy Crafting Life."
+                },
+                "2": {
+                    "title": "2. Własność intelektualna",
+                    "content": "Wszelkie materiały znajdujące się na stronie (w szczególności projekty architektoniczne, autorskie zdjęcia realizacji, grafiki oraz teksty) chronione są prawem autorskim i należą wyłącznie do Crafting Life lub zostały użyte na podstawie odpowiednich licencji. Ich kopiowanie i rozpowszechnianie bez uprzedniej zgody jest surowo zabronione."
+                },
+                "3": {
+                    "title": "3. Dane i Komunikacja",
+                    "content": "Serwis informuje, że obecnie nie gromadzimy danych za pośrednictwem formularza kontaktowego ani nie prowadzimy zapisów do newslettera. Jedynym elementem zapisywanym w lokalnej pamięci przeglądarki użytkownika jest wybrana preferencja językowa serwisu."
+                },
+                "4": {
+                    "title": "4. Zmiany Regulaminu",
+                    "content": "Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszym Regulaminie."
+                }
+            }
+        },
+        "privacyPage": {
+            "title": "Polityka Prywatności",
+            "sections": {
+                "1": {
+                    "title": "1. Informacje ogólne",
+                    "content": "Niniejsza Polityka Prywatności określa zasady przetwarzania danych w związku z korzystaniem ze strony firmy Crafting Life."
+                },
+                "2": {
+                    "title": "2. Jakie dane zbieramy?",
+                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych. Jedyne dane zachowywane po stronie użytkownika to wybór preferowanego języka (przy użyciu funkcji localStorage w przeglądarce)."
+                },
+                "3": {
+                    "title": "3. Prawa użytkownika",
+                    "content": "Jako że nie przetwarzamy i nie przechowujemy Twoich bezpośrednich danych osobowych, standardowe procedury RODO nie mają tu bezpośredniego zastosowania w kontekście gromadzonych danych, ponieważ żadne z nich nie trafiają na nasze serwery."
+                }
+            },
+            "contactBox": {
+                "title": "Więcej pytań?",
+                "content": "W przypadku pytań dotyczących funkcjonowania serwisu, skontaktuj się z nami pod adresem: kontakt@craftinglife.pl"
+            }
         }
     },
     uk: {
@@ -498,6 +540,48 @@ export const translations = {
                 "terms": "Правила",
                 "sitemap": "Карта сайту"
             }
+        },
+        "termsPage": {
+            "title": "Правила користування",
+            "sections": {
+                "1": {
+                    "title": "1. Загальні положення",
+                    "content": "Ці правила визначають умови користування веб-сайтом компанії Crafting Life."
+                },
+                "2": {
+                    "title": "2. Інтелектуальна власність",
+                    "content": "Всі матеріали на сайті (особливо архітектурні проекти, авторські фотографії робіт, графіка та тексти) захищені авторським правом і належать виключно Crafting Life. Їх копіювання та розповсюдження без попередньої згоди суворо заборонено."
+                },
+                "3": {
+                    "title": "3. Дані та Комунікація",
+                    "content": "Ми не збираємо дані через контактну форму і не ведемо розсилку новин. Єдиний елемент, що зберігається в локальній пам'яті браузера користувача - це вибрана мова сайту."
+                },
+                "4": {
+                    "title": "4. Зміни до Правил",
+                    "content": "Адміністратор залишає за собою право вносити зміни до цих Правил."
+                }
+            }
+        },
+        "privacyPage": {
+            "title": "Політика Конфіденційності",
+            "sections": {
+                "1": {
+                    "title": "1. Загальна інформація",
+                    "content": "Ця Політика Конфіденційності визначає правила обробки даних у зв'язку з використанням сайту Crafting Life."
+                },
+                "2": {
+                    "title": "2. Які дані ми збираємо?",
+                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей. Єдині дані, які зберігаються на стороні користувача - це вибір мови сайту (за допомогою функції localStorage)."
+                },
+                "3": {
+                    "title": "3. Права користувача",
+                    "content": "Оскільки ми не зберігаємо ваші персональні дані на наших серверах, вам не потрібно хвилюватися про їх обробку чи витоки."
+                }
+            },
+            "contactBox": {
+                "title": "Більше питань?",
+                "content": "Якщо у вас є питання, зв'яжіться з нами за адресою: kontakt@craftinglife.pl"
+            }
         }
     },
     ru: {
@@ -736,6 +820,48 @@ export const translations = {
                 "terms": "Правила",
                 "sitemap": "Карта сайта"
             }
+        },
+        "termsPage": {
+            "title": "Правила пользования",
+            "sections": {
+                "1": {
+                    "title": "1. Общие положения",
+                    "content": "Настоящие правила определяют условия использования веб-сайта компании Crafting Life."
+                },
+                "2": {
+                    "title": "2. Интеллектуальная собственность",
+                    "content": "Все материалы на сайте (особенно архитектурные проекты, авторские фотографии работ, графика и тексты) защищены авторским правом и принадлежат исключительно Crafting Life. Их копирование и распространение без предварительного согласия строго запрещено."
+                },
+                "3": {
+                    "title": "3. Данные и Коммуникация",
+                    "content": "Мы не собираем данные через контактную форму и не ведем рассылку новостей. Единственный элемент, который сохраняется в локальной памяти браузера пользователя - это выбранный язык сайта."
+                },
+                "4": {
+                    "title": "4. Изменения в Правилах",
+                    "content": "Администратор оставляет за собой право вносить изменения в настоящие Правила."
+                }
+            }
+        },
+        "privacyPage": {
+            "title": "Политика Конфиденциальности",
+            "sections": {
+                "1": {
+                    "title": "1. Общая информация",
+                    "content": "Данная Политика Конфиденциальности определяет правила обработки данных в связи с использованием сайта Crafting Life."
+                },
+                "2": {
+                    "title": "2. Какие данные мы собираем?",
+                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей. Единственные данные, хранящиеся на стороне пользователя - это выбор предпочтительного языка (с помощью localStorage)."
+                },
+                "3": {
+                    "title": "3. Права пользователя",
+                    "content": "Поскольку мы не храним ваши личные данные на наших серверах, вам не о чем беспокоиться."
+                }
+            },
+            "contactBox": {
+                "title": "Больше вопросов?",
+                "content": "Если у вас есть вопросы, свяжитесь с нами по адресу: kontakt@craftinglife.pl"
+            }
         }
     },
     en: {
@@ -973,6 +1099,48 @@ export const translations = {
                 "privacy": "Privacy Policy",
                 "terms": "Terms of Service",
                 "sitemap": "Sitemap"
+            }
+        },
+        "termsPage": {
+            "title": "Terms of Service",
+            "sections": {
+                "1": {
+                    "title": "1. General Provisions",
+                    "content": "These terms determine the rules of using the functionalities provided on the Crafting Life website."
+                },
+                "2": {
+                    "title": "2. Intellectual Property",
+                    "content": "All materials on the website (especially architectural designs, original project photos, graphics, and texts) are protected by copyright and belong exclusively to Crafting Life. Their copying and distribution without prior consent is strictly prohibited."
+                },
+                "3": {
+                    "title": "3. Data and Communication",
+                    "content": "We do not collect data through a contact form, nor do we run a newsletter. The only element saved in the user's browser local storage is the selected language preference."
+                },
+                "4": {
+                    "title": "4. Changes to the Terms",
+                    "content": "The Administrator reserves the right to make changes to these Terms."
+                }
+            }
+        },
+        "privacyPage": {
+            "title": "Privacy Policy",
+            "sections": {
+                "1": {
+                    "title": "1. General Information",
+                    "content": "This Privacy Policy specifies the rules of data processing in connection with using the Crafting Life website."
+                },
+                "2": {
+                    "title": "2. What data do we collect?",
+                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes. The only data kept on the user's side is their language preference (via browser localStorage)."
+                },
+                "3": {
+                    "title": "3. User Rights",
+                    "content": "Since we do not process or store your personal data on our servers, there are no personal details for you to be concerned about regarding data leaks."
+                }
+            },
+            "contactBox": {
+                "title": "More Questions?",
+                "content": "If you have any questions, feel free to contact us at: kontakt@craftinglife.pl"
             }
         }
     }
