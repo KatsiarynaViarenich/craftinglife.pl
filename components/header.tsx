@@ -9,20 +9,21 @@ import { useLanguage } from "@/lib/language-context"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const prefix = language === "pl" ? "" : `/${language}`
 
   const navLinks = [
-    { href: "/#projects", label: t.nav.portfolio },
-    { href: "/#services", label: t.nav.services },
-    { href: "/#about", label: t.nav.about },
-    { href: "/#testimonials", label: t.nav.testimonials },
-    { href: "/#contact", label: t.nav.contact },
+    { href: `${prefix}/#projects`, label: t.nav.portfolio },
+    { href: `${prefix}/#services`, label: t.nav.services },
+    { href: `${prefix}/#about`, label: t.nav.about },
+    { href: `${prefix}/#testimonials`, label: t.nav.testimonials },
+    { href: `${prefix}/#contact`, label: t.nav.contact },
   ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-serif tracking-tight text-foreground">
+        <Link href={prefix || "/"} className="text-2xl font-serif tracking-tight text-foreground">
           Crafting Life
         </Link>
 
@@ -42,7 +43,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
           <Button asChild className="uppercase tracking-wide">
-            <Link href="/#contact">{t.nav.getQuote}</Link>
+            <Link href={`${prefix}/#contact`}>{t.nav.getQuote}</Link>
           </Button>
         </div>
 
@@ -74,7 +75,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild className="uppercase tracking-wide mt-4">
-              <Link href="/#contact">{t.nav.getQuote}</Link>
+              <Link href={`${prefix}/#contact`}>{t.nav.getQuote}</Link>
             </Button>
           </div>
         </div>

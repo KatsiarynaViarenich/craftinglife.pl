@@ -1,7 +1,9 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { translations, type Language, type Translations } from "./translations";
+import { defaultLocale, locales } from "./i18n";
 
 interface LanguageContextType {
   language: Language;
@@ -11,52 +13,33 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("pl");
-  const [pendingLanguage, setPendingLanguage] = useState<Language | null>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+function stripLocalePrefix(pathname: string): string {
+  const [, maybeLocale, ...rest] = pathname.split("/");
+  if ((locales as string[]).includes(maybeLocale) && maybeLocale !== defaultLocale) {
+    const remainder = rest.join("/");
+    return remainder ? `/${remainder}` : "/";
+  }
+  return pathname;
+}
 
-  useEffect(() => {
-    const saved = localStorage.getItem("language") as Language | null;
-    if (saved && saved in translations) {
-      setLanguageState(saved);
-    } else {
-      setLanguageState("pl");
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
-
-  useEffect(() => {
-    if (!isTransitioning || pendingLanguage === null) return;
-
-    // use an opacity cross-fade like testimonials but keep a short timing (300ms)
-    const fadeOutId = window.setTimeout(() => {
-      setLanguageState(pendingLanguage);
-      localStorage.setItem("language", pendingLanguage);
-      setPendingLanguage(null);
-      // small delay to allow DOM update before fading back in
-      window.setTimeout(() => setIsTransitioning(false), 10);
-    }, 300);
-
-    return () => window.clearTimeout(fadeOutId);
-  }, [isTransitioning, pendingLanguage]);
+export function LanguageProvider({ children, locale }: { children: ReactNode; locale: Language }) {
+  const router = useRouter();
+  const pathname = usePathname();
 
   const setLanguage = (lang: Language) => {
-    if (lang === language || pendingLanguage === lang) return;
-    setPendingLanguage(lang);
-    setIsTransitioning(true);
+    if (lang === locale) return;
+    const bare = stripLocalePrefix(pathname);
+    const prefix = lang === defaultLocale ? "" : `/${lang}`;
+    const target = `${prefix}${bare === "/" ? "" : bare}` || "/";
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    router.push(`${target}${hash}`);
   };
 
-  const t = translations[language] as unknown as Translations;
+  const t = translations[locale] as unknown as Translations;
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      <div className={`transition-opacity duration-300 ease-in-out ${isTransitioning ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-        {children}
-      </div>
+    <LanguageContext.Provider value={{ language: locale, setLanguage, t }}>
+      {children}
     </LanguageContext.Provider>
   );
 }

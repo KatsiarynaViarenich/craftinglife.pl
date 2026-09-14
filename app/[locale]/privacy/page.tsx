@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
         <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-8">
           {t.privacyPage.title}
         </h1>
-        
+
         <div className="space-y-8 text-muted-foreground leading-relaxed">
           <section>
             <h2 className="text-xl text-foreground font-semibold mb-4">{t.privacyPage.sections["1"].title}</h2>

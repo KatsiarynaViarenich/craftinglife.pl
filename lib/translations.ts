@@ -9,6 +9,10 @@ export type Language = keyof typeof languages;
 
 export const translations = {
     pl: {
+        "meta": {
+            "title": "Crafting Life | Wykończenia Mieszkań",
+            "description": "Profesjonalne wykończenie mieszkań pod klucz. 13 lat doświadczenia, 200+ zrealizowanych projektów. 2 lata rękojmi, wysoka jakość i terminowość."
+        },
         "nav": {
             "portfolio": "Realizacje",
             "services": "Usługi",
@@ -173,6 +177,7 @@ export const translations = {
             "title": "Zaufali Nam ",
             "titleHighlight": "Zadowoleni Klienci",
             "description": "Sprawdź, co mówią o nas osoby, które powierzyły nam wykończenie swoich wnętrz.",
+            "readMore": "Czytaj pełną opinię",
             "reviews": {
                 "review1": {
                     "text": "Doskonała współpraca! Pracę remontowe wykonane w pełni profesjonalnie, wszystko na tip top. Dbałość dosłownie o każdy szczegół. Rzetelna i doskonała komunikacja. Szczerze polecam i już nikogo innego nie będę szukać w przypadku nowych remontów.",
@@ -273,7 +278,7 @@ export const translations = {
                 },
                 "3": {
                     "title": "3. Dane i Komunikacja",
-                    "content": "Serwis informuje, że obecnie nie gromadzimy danych za pośrednictwem formularza kontaktowego ani nie prowadzimy zapisów do newslettera. Jedynym elementem zapisywanym w lokalnej pamięci przeglądarki użytkownika jest wybrana preferencja językowa serwisu."
+                    "content": "Serwis informuje, że obecnie nie gromadzimy danych za pośrednictwem formularza kontaktowego ani nie prowadzimy zapisów do newslettera."
                 },
                 "4": {
                     "title": "4. Zmiany Regulaminu",
@@ -290,7 +295,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Jakie dane zbieramy?",
-                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych. Jedyne dane zachowywane po stronie użytkownika to wybór preferowanego języka (przy użyciu funkcji localStorage w przeglądarce)."
+                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych."
                 },
                 "3": {
                     "title": "3. Prawa użytkownika",
@@ -304,6 +309,10 @@ export const translations = {
         }
     },
     uk: {
+        "meta": {
+            "title": "Crafting Life | Оздоблення квартир у Вроцлаві",
+            "description": "Професійне оздоблення квартир під ключ у Вроцлаві. 13 років досвіду, понад 200 виконаних проєктів. 2 роки гарантії, висока якість та дотримання термінів."
+        },
         "nav": {
             "portfolio": "Роботи",
             "services": "Послуги",
@@ -452,24 +461,25 @@ export const translations = {
             "title": "Нам Довіряють ",
             "titleHighlight": "Задоволені Клієнти",
             "description": "Подивіться, що кажуть про нас люди, які довірили нам оздоблення своїх інтер'єрів.",
+            "readMore": "Читати повний відгук",
             "reviews": {
                 "review1": {
                     "text": "Чудова співпраця! Ремонтні роботи виконані цілком професійно, все на вищому рівні. Увага буквально до кожної деталі. Надійна та відмінна комунікація. Щиро рекомендую і більше нікого іншого не шукатиму у разі нових ремонтів.",
-                    "author": "Задоволений клієнт",
+                    "author": "Пауліна",
                     "role": "Власник квартири",
-                    "location": "Оздоблення інтер'єру"
+                    "location": "Оздоблення ванної"
                 },
                 "review2": {
                     "text": "Професійний підхід до клієнта. Швидке вирішення проблеми, з якою зіткнулися, та дуже професійна консультація. Рекомендую.",
-                    "author": "Задоволений клієнт",
-                    "role": "Власник",
-                    "location": "Оздоблення ванної кімнати"
+                    "author": "Магдалена В.",
+                    "role": "Власник квартири",
+                    "location": "Електроустановка"
                 },
                 "review3": {
                     "text": "Я дуже задоволений співпрацею з компанією, яка проклала у мене нову електропроводку, а також зашпаклювала і пофарбувала стіни.\nПрофесійний підхід до клієнта, допомога на кожному етапі ремонту. Експрес-обслуговування, якість на найвищому рівні, чим я дуже задоволений. Чудова і злагоджена команда.\nДякую за співпрацю. :)",
-                    "author": "Задоволений клієнт",
-                    "role": "Індивідуальний клієнт",
-                    "location": "Оздоблення інтер'єру"
+                    "author": "Яцек В.",
+                    "role": "Власник квартири",
+                    "location": "Електроустановка і фарбування"
                 },
 
                 "review4": {
@@ -554,7 +564,7 @@ export const translations = {
                 },
                 "3": {
                     "title": "3. Дані та Комунікація",
-                    "content": "Ми не збираємо дані через контактну форму і не ведемо розсилку новин. Єдиний елемент, що зберігається в локальній пам'яті браузера користувача - це вибрана мова сайту."
+                    "content": "Ми не збираємо дані через контактну форму і не ведемо розсилку новин."
                 },
                 "4": {
                     "title": "4. Зміни до Правил",
@@ -571,7 +581,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Які дані ми збираємо?",
-                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей. Єдині дані, які зберігаються на стороні користувача - це вибір мови сайту (за допомогою функції localStorage)."
+                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей."
                 },
                 "3": {
                     "title": "3. Права користувача",
@@ -585,6 +595,10 @@ export const translations = {
         }
     },
     ru: {
+        "meta": {
+            "title": "Crafting Life | Отделка квартир во Вроцлаве",
+            "description": "Профессиональная отделка квартир под ключ во Вроцлаве. 13 лет опыта, более 200 реализованных проектов. 2 года гарантии, высокое качество и соблюдение сроков."
+        },
         "nav": {
             "portfolio": "Работы",
             "services": "Услуги",
@@ -733,24 +747,25 @@ export const translations = {
             "title": "Нам Доверяют ",
             "titleHighlight": "Довольные Клиенты",
             "description": "Посмотрите, что говорят о нас люди, которые доверили нам отделку своих интерьеров.",
+            "readMore": "Читать полный отзыв",
             "reviews": {
                 "review1": {
                     "text": "Отличное сотрудничество! Ремонтные работы выполнены в полной мере профессионально, все на высшем уровне. Внимание буквально к каждой детали. Надежная и отличная коммуникация. Искренне рекомендую и больше никого искать не буду в случае новых ремонтов.",
-                    "author": "Довольный клиент",
+                    "author": "Паулина",
                     "role": "Владелец квартиры",
-                    "location": "Отделка интерьера"
+                    "location": "Отделка ванной"
                 },
                 "review2": {
                     "text": "Профессиональный подход к клиенту. Быстрое решение возникшей проблемы, а также весьма профессиональная консультация. Рекомендую.",
-                    "author": "Довольный клиент",
-                    "role": "Владелец",
-                    "location": "Отделка ванной"
+                    "author": "Магдалена В.",
+                    "role": "Владелец квартиры",
+                    "location": "Электроустановка"
                 },
                 "review3": {
                     "text": "Я очень доволен сотрудничеством с компанией, которая проложила у меня новую электропроводку, а также зашпаклевала и покрасила стены.\nПрофессиональный подход к клиенту, помощь на каждом этапе ремонта. Экспресс-обслуживание, качество на высшем уровне, чем я очень доволен. Отличная и слаженная команда.\nСпасибо за сотрудничество. :)",
-                    "author": "Довольный клиент",
-                    "role": "Индивидуальный клиент",
-                    "location": "Отделка интерьера"
+                    "author": "Яцек В.",
+                    "role": "Владелец квартиры",
+                    "location": "Электроустановка и покраска"
                 },
                 "review4": {
                     "text": "Команда Анджея выполнила ремонт нашей кухни тщательно и аккуратно — плитка уложена ровно и эстетично, а покраска распылением дала отличный результат. Все работы были выполнены с вниманием к деталям, а исправления, потребовавшиеся исключительно по нашей вине (мы забыли одну розетку), были выполнены без каких-либо нареканий и в прекрасной атмосфере. Во время ремонта мы также решили частично заменить электропроводку — господин Анджей и его команда подошли к этой задаче оперативно и профессионально, без задержек. Бригада не только добросовестна, но и очень дружелюбна, что сделало сотрудничество настоящим удовольствием. Настоятельно рекомендую.",
@@ -834,7 +849,7 @@ export const translations = {
                 },
                 "3": {
                     "title": "3. Данные и Коммуникация",
-                    "content": "Мы не собираем данные через контактную форму и не ведем рассылку новостей. Единственный элемент, который сохраняется в локальной памяти браузера пользователя - это выбранный язык сайта."
+                    "content": "Мы не собираем данные через контактную форму и не ведем рассылку новостей."
                 },
                 "4": {
                     "title": "4. Изменения в Правилах",
@@ -851,7 +866,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Какие данные мы собираем?",
-                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей. Единственные данные, хранящиеся на стороне пользователя - это выбор предпочтительного языка (с помощью localStorage)."
+                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей."
                 },
                 "3": {
                     "title": "3. Права пользователя",
@@ -865,6 +880,10 @@ export const translations = {
         }
     },
     en: {
+        "meta": {
+            "title": "Crafting Life | Apartment Finishing in Wrocław",
+            "description": "Professional turnkey apartment finishing in Wrocław. 13 years of experience, 200+ completed projects. 2-year warranty, high quality and punctuality."
+        },
         "nav": {
             "portfolio": "Portfolio",
             "services": "Services",
@@ -1013,24 +1032,25 @@ export const translations = {
             "title": "Trusted by ",
             "titleHighlight": "Happy Clients",
             "description": "Check out what people who entrusted us with their interiors have to say about us.",
+            "readMore": "Read full review",
             "reviews": {
                 "review1": {
                     "text": "Excellent cooperation! Renovation works carried out fully professionally, everything spot on. Attention to literally every detail. Reliable and perfect communication. Honestly recommend and I will not look for anyone else in the case of new renovations.",
-                    "author": "Happy Client",
+                    "author": "Paulina",
                     "role": "Apartment Owner",
-                    "location": "Interior Finishing"
+                    "location": "Bathroom Finishing"
                 },
                 "review2": {
                     "text": "Professional approach to the client. Quick resolution of the encountered problem, and very professional advice. Recommended.",
-                    "author": "Happy Client",
-                    "role": "Owner",
-                    "location": "Bathroom Finishing"
+                    "author": "Magdalena W.",
+                    "role": "Apartment Owner",
+                    "location": "Electrical Installation"
                 },
                 "review3": {
                     "text": "I am very satisfied with the cooperation with the company, who laid a new electrical installation for me, as well as plastered and painted the walls.\nProfessional approach to the client, help at every stage of the renovation. Express service, highest quality, which I am very happy with. A great and well-coordinated team.\nThanks for the cooperation. :)",
-                    "author": "Happy Client",
-                    "role": "Individual Client",
-                    "location": "Interior Finishing"
+                    "author": "Jacek W.",
+                    "role": "Apartment Owner",
+                    "location": "Electrical Installation & Painting"
                 },
                 "review4": {
                     "text": "Mr. Andrzej's team completed the renovation of our kitchen thoroughly and carefully — the tiles were laid evenly and neatly, and the spray painting produced a great finish. All work was carried out with attention to detail, and the fixes required solely because of our oversight (we forgot one outlet) were done without complaint and in a great atmosphere. During the renovation we also decided to partially replace the electrical wiring — Mr. Andrzej and his team tackled it efficiently and professionally, without delays. The crew is not only reliable but also very friendly, which made the collaboration a real pleasure. I definitely recommend them.",
@@ -1114,7 +1134,7 @@ export const translations = {
                 },
                 "3": {
                     "title": "3. Data and Communication",
-                    "content": "We do not collect data through a contact form, nor do we run a newsletter. The only element saved in the user's browser local storage is the selected language preference."
+                    "content": "We do not collect data through a contact form, nor do we run a newsletter."
                 },
                 "4": {
                     "title": "4. Changes to the Terms",
@@ -1131,7 +1151,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. What data do we collect?",
-                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes. The only data kept on the user's side is their language preference (via browser localStorage)."
+                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes."
                 },
                 "3": {
                     "title": "3. User Rights",

@@ -14,7 +14,7 @@ export default function TermsOfUse() {
         <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-8">
           {t.termsPage.title}
         </h1>
-        
+
         <div className="space-y-8 text-muted-foreground leading-relaxed">
           <section>
             <h2 className="text-xl text-foreground font-semibold mb-4">{t.termsPage.sections["1"].title}</h2>

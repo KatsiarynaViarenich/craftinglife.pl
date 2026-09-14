@@ -10,25 +10,26 @@ const socialLinks = [
 ]
 
 export function Footer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const prefix = language === "pl" ? "" : `/${language}`
 
   const footerLinks = {
     services: [
-      { label: t.services.items.residential.title, href: "/#services" },
-      { label: t.services.items.glamping.title, href: "/#services" },
-      { label: t.services.items.projectManagement.title, href: "/#services" },
-      { label: t.services.items.drywall.title, href: "/#services" },
-      { label: t.services.items.renovation.title, href: "/#services" },
-      { label: t.services.items.commercial.title, href: "/#services" },
-      { label: t.services.items.design.title, href: "/#services" },
-      { label: t.services.items.terraces.title, href: "/#services" },
-      { label: t.services.items.consulting.title, href: "/#services" },
+      { label: t.services.items.residential.title, href: `${prefix}/#services` },
+      { label: t.services.items.glamping.title, href: `${prefix}/#services` },
+      { label: t.services.items.projectManagement.title, href: `${prefix}/#services` },
+      { label: t.services.items.drywall.title, href: `${prefix}/#services` },
+      { label: t.services.items.renovation.title, href: `${prefix}/#services` },
+      { label: t.services.items.commercial.title, href: `${prefix}/#services` },
+      { label: t.services.items.design.title, href: `${prefix}/#services` },
+      { label: t.services.items.terraces.title, href: `${prefix}/#services` },
+      { label: t.services.items.consulting.title, href: `${prefix}/#services` },
     ],
     company: [
-      { label: t.nav.about, href: "/#about" },
-      { label: t.nav.portfolio, href: "/#projects" },
-      { label: t.nav.testimonials, href: "/#testimonials" },
-      { label: t.nav.contact, href: "/#contact" },
+      { label: t.nav.about, href: `${prefix}/#about` },
+      { label: t.nav.portfolio, href: `${prefix}/#projects` },
+      { label: t.nav.testimonials, href: `${prefix}/#testimonials` },
+      { label: t.nav.contact, href: `${prefix}/#contact` },
     ],
   }
 
@@ -38,7 +39,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-serif tracking-tight">
+            <Link href={prefix || "/"} className="text-2xl font-serif tracking-tight">
               Crafting Life
             </Link>
             <p className="mt-4 text-background/70 leading-relaxed">
@@ -112,10 +113,10 @@ export function Footer() {
             © {new Date().getFullYear()} Crafting Life. {t.footer.rights}
           </p>
           <div className="flex gap-6 text-sm">
-            <Link href="/privacy" className="text-background/60 hover:text-background transition-colors">
+            <Link href={`${prefix}/privacy`} className="text-background/60 hover:text-background transition-colors">
               {t.footer.links.privacy}
             </Link>
-            <Link href="/terms" className="text-background/60 hover:text-background transition-colors">
+            <Link href={`${prefix}/terms`} className="text-background/60 hover:text-background transition-colors">
               {t.footer.links.terms}
             </Link>
           </div>

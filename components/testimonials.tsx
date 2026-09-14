@@ -17,7 +17,7 @@ type ReviewKey = "review1" | "review2" | "review3" | "review4"
 const reviewKeys: ReviewKey[] = ["review1", "review2", "review3", "review4"]
 
 export function Testimonials() {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -49,13 +49,6 @@ export function Testimonials() {
     }
   }, [emblaApi, onSelect])
 
-  const readMoreText = {
-    pl: "Czytaj pełną opinię",
-    uk: "Читати повний відгук",
-    ru: "Читать полный отзыв",
-    en: "Read full review"
-  }[language] || "Read full review"
-
   return (
     <section id="testimonials" className="py-24 bg-primary">
       <div className="container mx-auto px-6">
@@ -80,13 +73,13 @@ export function Testimonials() {
                 <div className="flex touch-pan-y">
                   {reviewKeys.map((key) => {
                     const originalText = t.testimonials.reviews[key].text;
-                    const isLong = originalText.length > 350;
+                    const isLong = originalText.length > 360;
 
                     // Bezpieczne ucięcie na 350 znaków by nie uciąć w połowie słowa
                     let reviewText = originalText;
                     if (isLong) {
-                      const cutPos = originalText.lastIndexOf(" ", 350);
-                      reviewText = originalText.slice(0, cutPos > 0 ? cutPos : 350) + "...";
+                      const cutPos = originalText.lastIndexOf(" ", 360);
+                      reviewText = originalText.slice(0, cutPos > 0 ? cutPos : 360) + "...";
                     }
 
                     return (
@@ -99,7 +92,7 @@ export function Testimonials() {
                             <Dialog>
                               <DialogTrigger asChild>
                                 <button className="mt-3 text-primary-foreground/70 hover:text-primary-foreground underline underline-offset-4 text-sm font-medium transition-colors">
-                                  {readMoreText}
+                                  {t.testimonials.readMore}
                                 </button>
                               </DialogTrigger>
                               <DialogContent className="sm:max-w-xl max-h-[85vh] overflow-y-auto">
