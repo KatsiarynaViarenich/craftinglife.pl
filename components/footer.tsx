@@ -1,12 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/CraftingLifePL/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/craftinglife.pl/", label: "Instagram" },
 ]
 
 export function Footer() {
@@ -45,18 +45,20 @@ export function Footer() {
             <p className="mt-4 text-background/70 leading-relaxed">
               {t.footer.description}
             </p>
-            {/* <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-6">
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 border border-background/30 flex items-center justify-center hover:bg-background/10 transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
                 </Link>
               ))}
-            </div> */}
+            </div>
           </div>
 
           {/* Services */}
