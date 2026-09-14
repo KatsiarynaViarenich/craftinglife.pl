@@ -1,9 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import useEmblaCarousel from "embla-carousel-react"
 
 interface ProjectLightboxProps {
   isOpen: boolean
@@ -16,9 +17,6 @@ interface ProjectLightboxProps {
   images: string[]
 }
 
-const SNAP_DURATION = 380
-const SNAP_EASING = "cubic-bezier(0.22, 1, 0.36, 1)"
-
 export function ProjectLightbox({
   isOpen,
   onClose,
@@ -29,89 +27,38 @@ export function ProjectLightbox({
   projectYear,
   images,
 }: ProjectLightboxProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [currentIndex, setCurrentIndex] = useState(0)
-  // dragOffset = live px offset while finger is down
-  const [dragOffset, setDragOffset] = useState(0)
-  // extraOffset = animated px offset used during snap (next = -100%, prev = +100%)
-  // expressed as percentage string so no offsetWidth needed
-  const [snapState, setSnapState] = useState<"idle" | "snapping">("idle")
-  const [snapTargetPercent, setSnapTargetPercent] = useState(0) // -100 | 0 | 100
-  const [isDragging, setIsDragging] = useState(false)
-  const [resetting, setResetting] = useState(false)
 
-  const touchStartX = useRef<number | null>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const stripRef = useRef<HTMLDivElement>(null)
-  const pendingDirectionRef = useRef<"next" | "prev" | null>(null)
+  const handlePrevious = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
+  const handleNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
+  
+  const handleThumbnailClick = useCallback((index: number) => {
+    emblaApi?.scrollTo(index)
+  }, [emblaApi])
 
-  const prevIndex = (currentIndex - 1 + images.length) % images.length
-  const nextIndex = (currentIndex + 1) % images.length
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCurrentIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi, setCurrentIndex])
 
-  // --- FIX 3: use percentage-based transform, no offsetWidth needed ---
-  // Base position: strip sits at -33.333% (center slot visible).
-  // During drag: offset by dragOffset px via calc().
-  // During snap: shift by additional ±33.333% via snapTargetPercent.
-  const translateValue = resetting
-    ? "translateX(-33.333%)"
-    : snapState === "snapping"
-      ? `translateX(calc(-33.333% + ${snapTargetPercent}%))`
-      : `translateX(calc(-33.333% + ${dragOffset}px))`
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on("select", onSelect)
+    emblaApi.on("reInit", onSelect)
+    return () => {
+      emblaApi.off("select", onSelect)
+      emblaApi.off("reInit", onSelect)
+    }
+  }, [emblaApi, onSelect])
 
-  const animateSwipe = useCallback((direction: "next" | "prev") => {
-    pendingDirectionRef.current = direction
-    setSnapState("snapping")
-    setSnapTargetPercent(direction === "next" ? -33.333 : 33.333)
-  }, [])
-
-  // --- FIX 4: guard on propertyName so only transform triggers the reset ---
-  const handleStripTransitionEnd = useCallback(
-    (e: React.TransitionEvent<HTMLDivElement>) => {
-      if (e.propertyName !== "transform") return
-      if (snapState !== "snapping" || resetting) return
-
-      const direction = pendingDirectionRef.current
-      if (!direction) return
-      pendingDirectionRef.current = null
-
-      // Disable transition, jump index, reset percent — all invisible
-      setResetting(true)
-      setCurrentIndex((prev) =>
-        direction === "next"
-          ? (prev + 1) % images.length
-          : (prev - 1 + images.length) % images.length
-      )
-      setSnapTargetPercent(0)
-      setDragOffset(0)
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setResetting(false)
-          setSnapState("idle")
-        })
-      })
-    },
-    [snapState, resetting, images.length]
-  )
-
-  const handlePrevious = useCallback(() => animateSwipe("prev"), [animateSwipe])
-  const handleNext = useCallback(() => animateSwipe("next"), [animateSwipe])
-
-  // --- FIX 1: thumbnail click animates via animateSwipe instead of jumping ---
-  const handleThumbnailClick = useCallback(
-    (index: number) => {
-      if (snapState !== "idle" || index === currentIndex) return
-      // Determine natural direction: forward or backward in the array
-      const forward =
-        (index - currentIndex + images.length) % images.length <=
-        images.length / 2
-      animateSwipe(forward ? "next" : "prev")
-      // We want to land on `index`, not just ±1. For multi-step jumps we
-      // update currentIndex immediately so the pre-loaded slot shows the
-      // right image while the animation plays.
-      setCurrentIndex(index)
-    },
-    [snapState, currentIndex, images.length, animateSwipe]
-  )
+  // Reset to first slide when opened
+  useEffect(() => {
+    if (isOpen && emblaApi) {
+      emblaApi.scrollTo(0, true) // Instantly jump to 0
+    }
+  }, [isOpen, emblaApi])
 
   // Keyboard
   useEffect(() => {
@@ -141,56 +88,7 @@ export function ProjectLightbox({
     }
   }, [isOpen, onClose])
 
-  useEffect(() => {
-    setCurrentIndex(0)
-    setDragOffset(0)
-    setSnapTargetPercent(0)
-    setSnapState("idle")
-  }, [isOpen])
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (snapState !== "idle") return
-    touchStartX.current = e.touches[0].clientX
-    setIsDragging(true)
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStartX.current === null || snapState !== "idle") return
-    setDragOffset(e.touches[0].clientX - touchStartX.current)
-  }
-
-  // --- FIX 2: don't zero dragOffset before rAF — transition is still off ---
-  // Instead, keep isDragging=true until rAF so the zero-reset is invisible,
-  // then in the same frame switch both off and start the snap.
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return
-    const dx = e.changedTouches[0].clientX - touchStartX.current
-    touchStartX.current = null
-
-    if (Math.abs(dx) > 50) {
-      const direction = dx < 0 ? "next" : "prev"
-      // Still in isDragging=true, so transition is suppressed.
-      // Zero the drag offset silently, then on next frame enable transition
-      // and kick off the snap animation — no visible jump.
-      setDragOffset(0)
-      requestAnimationFrame(() => {
-        setIsDragging(false)
-        animateSwipe(direction)
-      })
-    } else {
-      // Below threshold — animate bounce-back to center
-      setIsDragging(false)
-      setDragOffset(0)
-    }
-  }
-
   if (!isOpen) return null
-
-  const isAnimating = snapState === "snapping"
-  const transitionStyle =
-    isDragging || resetting
-      ? "none"
-      : `transform ${SNAP_DURATION}ms ${SNAP_EASING}`
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -208,56 +106,38 @@ export function ProjectLightbox({
           </button>
         </div>
 
-        {/* Swipeable carousel */}
-        <div
-          ref={containerRef}
-          className="flex-1 relative overflow-hidden"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div
-            ref={stripRef}
-            className="flex h-full"
-            onTransitionEnd={handleStripTransitionEnd}
-            style={{
-              width: "300%",
-              transform: translateValue,
-              transition: transitionStyle,
-            }}
-          >
-            {[prevIndex, currentIndex, nextIndex].map((imgIdx, slotIdx) => (
-              <div
-                key={slotIdx}
-                className="flex items-center justify-center px-10 md:px-16"
-                style={{ width: "33.333%" }}
-              >
-                <div className="relative w-full h-full max-w-5xl max-h-[70vh]">
-                  <Image
-                    src={images[imgIdx]}
-                    alt={slotIdx === 1 ? `${projectTitle} – ${currentIndex + 1}` : ""}
-                    fill
-                    className="object-contain"
-                    priority={slotIdx === 1}
-                  />
+        {/* Swipeable carousel using Embla */}
+        <div className="flex-1 relative overflow-hidden flex flex-col justify-center">
+          <div className="overflow-hidden w-full" ref={emblaRef}>
+            <div className="flex touch-pan-y">
+              {images.map((img, idx) => (
+                <div key={idx} className="flex-[0_0_100%] min-w-0 flex items-center justify-center px-4 md:px-16">
+                  <div className="relative w-full h-[60vh] md:h-[70vh]">
+                    <Image
+                      src={img}
+                      alt={`${projectTitle} – ${idx + 1}`}
+                      fill
+                      className="object-contain"
+                      priority={idx === 0}
+                      sizes="100vw"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Arrows */}
           <button
             onClick={handlePrevious}
-            disabled={isAnimating}
-            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 bg-card/10 hover:bg-card/20 text-card rounded-full transition-colors disabled:opacity-40"
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 bg-card/10 hover:bg-card/20 text-card rounded-full transition-colors"
             aria-label="Previous"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button
             onClick={handleNext}
-            disabled={isAnimating}
-            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 bg-card/10 hover:bg-card/20 text-card rounded-full transition-colors disabled:opacity-40"
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 bg-card/10 hover:bg-card/20 text-card rounded-full transition-colors"
             aria-label="Next"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -276,19 +156,19 @@ export function ProjectLightbox({
           </div>
 
           {/* Thumbnails */}
-          <div className="flex items-center justify-center gap-2 md:gap-3">
+          <div className="flex items-center justify-center gap-2 md:gap-3 flex-wrap">
             {images.map((image, index) => (
               <button
                 key={index}
                 onClick={() => handleThumbnailClick(index)}
                 className={cn(
-                  "relative w-12 h-12 md:w-16 md:h-16 overflow-hidden transition-all",
+                  "relative w-12 h-12 md:w-16 md:h-16 overflow-hidden transition-all shrink-0",
                   currentIndex === index
                     ? "ring-2 ring-primary opacity-100"
                     : "opacity-50 hover:opacity-80"
                 )}
               >
-                <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" />
+                <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" sizes="(max-width: 768px) 48px, 64px" />
               </button>
             ))}
           </div>
