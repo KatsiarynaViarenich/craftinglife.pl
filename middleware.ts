@@ -3,7 +3,7 @@ import { locales, defaultLocale } from "@/lib/i18n";
 
 const prefixedLocales = locales.filter((locale) => locale !== defaultLocale);
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     const hasPrefixedLocale = prefixedLocales.some(
