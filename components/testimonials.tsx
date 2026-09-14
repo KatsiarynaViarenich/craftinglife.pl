@@ -80,13 +80,13 @@ export function Testimonials() {
                 <div className="flex touch-pan-y">
                   {reviewKeys.map((key) => {
                     const originalText = t.testimonials.reviews[key].text;
-                    const isLong = originalText.length > 340;
+                    const isLong = originalText.length > 350;
 
-                    // Bezpieczne ucięcie na 320 znaków by nie uciąć w połowie słowa
+                    // Bezpieczne ucięcie na 350 znaków by nie uciąć w połowie słowa
                     let reviewText = originalText;
                     if (isLong) {
-                      const cutPos = originalText.lastIndexOf(" ", 340);
-                      reviewText = originalText.slice(0, cutPos > 0 ? cutPos : 340) + "...";
+                      const cutPos = originalText.lastIndexOf(" ", 350);
+                      reviewText = originalText.slice(0, cutPos > 0 ? cutPos : 350) + "...";
                     }
 
                     return (
