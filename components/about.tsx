@@ -12,7 +12,7 @@ export function About() {
   const { t } = useLanguage()
 
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-24 bg-background scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}

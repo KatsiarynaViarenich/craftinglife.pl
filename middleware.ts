@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { locales, defaultLocale } from "@/lib/i18n";
+import { locales, defaultLocale, isLocale, LOCALE_COOKIE } from "@/lib/i18n";
 
 const prefixedLocales = locales.filter((locale) => locale !== defaultLocale);
 
@@ -18,6 +18,16 @@ export function middleware(request: NextRequest) {
         const url = request.nextUrl.clone();
         url.pathname = pathname.slice(`/${defaultLocale}`.length) || "/";
         return NextResponse.redirect(url, 308);
+    }
+
+    // A returning visitor who previously picked a non-default language gets
+    // sent straight there; crawlers (no cookie) always see the default Polish
+    // rewrite below, so indexing behavior is unaffected.
+    const remembered = request.cookies.get(LOCALE_COOKIE)?.value;
+    if (remembered && isLocale(remembered) && remembered !== defaultLocale) {
+        const url = request.nextUrl.clone();
+        url.pathname = `/${remembered}${pathname === "/" ? "" : pathname}`;
+        return NextResponse.redirect(url, 307);
     }
 
     const url = request.nextUrl.clone();

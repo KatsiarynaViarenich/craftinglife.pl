@@ -33,7 +33,7 @@ export const translations = {
             "ctaSecondary": "Nasze realizacje",
             "stats": {
                 "years": "Lat Doświadczenia",
-                "projects": "Wykończonych Wnętrz",
+                "projects": "Zrealizowanych Projektów",
                 "countries": "Krajów Działalności",
                 "warranty": "Lata Rękojmi"
             }
@@ -295,7 +295,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Jakie dane zbieramy?",
-                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych."
+                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych. Korzystamy wyłącznie z anonimowej, zbiorczej analityki odwiedzin (Vercel Analytics), która nie wykorzystuje plików cookie i nie identyfikuje użytkownika. Jedynym zapisywanym przez nas plikiem cookie jest niewielki plik przechowujący wybraną przez Ciebie wersję językową strony, zapisywany wyłącznie po Twoim wyborze w przełączniku języka."
                 },
                 "3": {
                     "title": "3. Prawa użytkownika",
@@ -333,7 +333,7 @@ export const translations = {
             "ctaSecondary": "Наші роботи",
             "stats": {
                 "years": "Років досвіду",
-                "projects": "Завершених квартир",
+                "projects": "Реалізованих Проєктів",
                 "countries": "Країн діяльності",
                 "warranty": "Роки гарантії"
             }
@@ -581,7 +581,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Які дані ми збираємо?",
-                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей."
+                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей. Ми використовуємо виключно анонімну, узагальнену аналітику відвідувань (Vercel Analytics), яка не використовує файли cookie та не ідентифікує користувача. Єдиний файл cookie, який ми зберігаємо, — це невеликий файл, що запам'ятовує обрану Вами мовну версію сайту, який зберігається лише після Вашого вибору в перемикачі мови."
                 },
                 "3": {
                     "title": "3. Права користувача",
@@ -619,7 +619,7 @@ export const translations = {
             "ctaSecondary": "Наши работы",
             "stats": {
                 "years": "Лет Опыта",
-                "projects": "Готовых Квартир",
+                "projects": "Реализованных Проектов",
                 "countries": "Стран Деятельности",
                 "warranty": "Года Гарантии"
             }
@@ -866,7 +866,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Какие данные мы собираем?",
-                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей."
+                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей. Мы используем исключительно анонимную, агрегированную аналитику посещений (Vercel Analytics), которая не использует файлы cookie и не идентифицирует пользователя. Единственный файл cookie, который мы сохраняем, — это небольшой файл, запоминающий выбранную Вами языковую версию сайта, сохраняемый только после Вашего выбора в переключателе языка."
                 },
                 "3": {
                     "title": "3. Права пользователя",
@@ -904,7 +904,7 @@ export const translations = {
             "ctaSecondary": "Our Work",
             "stats": {
                 "years": "Years Experience",
-                "projects": "Finished Apartments",
+                "projects": "Projects",
                 "countries": "Countries of Operation",
                 "warranty": "Years Warranty"
             }
@@ -1151,7 +1151,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. What data do we collect?",
-                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes."
+                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes. We use only anonymous, aggregated visit analytics (Vercel Analytics), which does not use cookies and does not identify the user. The only cookie we store is a small file remembering the language version of the site you selected, saved only after you choose it in the language switcher."
                 },
                 "3": {
                     "title": "3. User Rights",

@@ -124,3 +124,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+  animation-timing-function: ease-in-out;
+}
+
+/* Keep viewport-edge-pinned fixed elements (e.g. the header) from widening
+   when Radix's scroll lock hides the native scrollbar behind an open dialog. */
+body[data-scroll-locked] header {
+  right: var(--removed-body-scroll-bar-size, 0px);
+}

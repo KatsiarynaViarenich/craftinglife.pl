@@ -3,7 +3,8 @@
 import { createContext, useContext, type ReactNode } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { translations, type Language, type Translations } from "./translations";
-import { defaultLocale, locales } from "./i18n";
+import { defaultLocale, locales, LOCALE_COOKIE } from "./i18n";
+import { navigateWithTransition } from "./view-transition";
 
 interface LanguageContextType {
   language: Language;
@@ -31,8 +32,10 @@ export function LanguageProvider({ children, locale }: { children: ReactNode; lo
     const bare = stripLocalePrefix(pathname);
     const prefix = lang === defaultLocale ? "" : `/${lang}`;
     const target = `${prefix}${bare === "/" ? "" : bare}` || "/";
-    const hash = typeof window !== "undefined" ? window.location.hash : "";
-    router.push(`${target}${hash}`);
+    document.cookie = `${LOCALE_COOKIE}=${lang}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+    navigateWithTransition(() => {
+      router.push(target);
+    });
   };
 
   const t = translations[locale] as unknown as Translations;

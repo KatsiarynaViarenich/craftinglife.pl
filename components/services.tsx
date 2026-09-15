@@ -21,7 +21,7 @@ export function Services() {
   const { t } = useLanguage()
 
   return (
-    <section id="services" className="py-24 bg-secondary">
+    <section id="services" className="py-24 bg-secondary scroll-mt-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">

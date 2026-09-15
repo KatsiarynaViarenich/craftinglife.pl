@@ -16,10 +16,14 @@ import {
 type ReviewKey = "review1" | "review2" | "review3" | "review4"
 const reviewKeys: ReviewKey[] = ["review1", "review2", "review3", "review4"]
 
+const AUTOPLAY_DELAY_MS = 6000
+
 export function Testimonials() {
   const { t } = useLanguage()
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -49,8 +53,16 @@ export function Testimonials() {
     }
   }, [emblaApi, onSelect])
 
+  useEffect(() => {
+    if (!emblaApi || isHovered || isDialogOpen) return
+    const id = setInterval(() => {
+      emblaApi.scrollNext()
+    }, AUTOPLAY_DELAY_MS)
+    return () => clearInterval(id)
+  }, [emblaApi, isHovered, isDialogOpen, currentIndex])
+
   return (
-    <section id="testimonials" className="py-24 bg-primary">
+    <section id="testimonials" className="py-24 bg-primary scroll-mt-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -64,7 +76,11 @@ export function Testimonials() {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="max-w-4xl mx-auto">
+        <div
+          className="max-w-4xl mx-auto"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <div className="relative">
             <Quote className="h-16 w-16 text-primary-foreground/20 absolute -top-4 -left-4 z-10 hidden md:block" />
 
@@ -89,7 +105,7 @@ export function Testimonials() {
                             {reviewText}
                           </p>
                           {isLong && (
-                            <Dialog>
+                            <Dialog onOpenChange={setIsDialogOpen}>
                               <DialogTrigger asChild>
                                 <button className="mt-3 text-primary-foreground/70 hover:text-primary-foreground underline underline-offset-4 text-sm font-medium transition-colors">
                                   {t.testimonials.readMore}
