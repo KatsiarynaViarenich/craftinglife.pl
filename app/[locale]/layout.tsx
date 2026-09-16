@@ -46,7 +46,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: meta.title,
     description: meta.description,
-    keywords: ['wykończenia mieszkań', 'remonty', 'pod klucz', 'craftinglife', 'crafting life', 'budownictwo', 'usługi budowlane', 'wrocław', 'wrocław remonty', 'wrocław wykończenia mieszkań'],
+    keywords: meta.keywords,
     robots: {
       index: true,
       follow: true,
@@ -105,9 +105,52 @@ export default async function LocaleLayout({
   }
   const locale = rawLocale;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${siteUrl}${localePrefix(locale)}/#business`,
+    name: 'Crafting Life',
+    url: `${siteUrl}${localePrefix(locale)}`,
+    image: `${siteUrl}${siteImage}`,
+    telephone: '+48731997440',
+    email: 'kontakt@craftinglife.pl',
+    priceRange: '$$',
+    vatID: 'PL8992579035',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Oboźna 58/1',
+      postalCode: '52-244',
+      addressLocality: 'Wrocław',
+      addressCountry: 'PL',
+    },
+    areaServed: 'Wrocław',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '23:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
+        opens: '09:00',
+        closes: '17:00',
+      },
+    ],
+    sameAs: [
+      'https://www.facebook.com/CraftingLifePL/',
+      'https://www.instagram.com/craftinglife.pl/',
+    ],
+  };
+
   return (
     <html lang={locale} suppressHydrationWarning className={`${dmSerif.variable} ${inter.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Providers locale={locale}>
           {children}
         </Providers>

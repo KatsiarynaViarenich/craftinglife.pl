@@ -63,7 +63,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-serif text-lg mb-4">{t.footer.services}</h4>
+            <h3 className="font-serif text-lg mb-4">{t.footer.services}</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg mb-4">{t.footer.quickLinks}</h4>
+            <h3 className="font-serif text-lg mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -97,7 +97,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-serif text-lg mb-4">{t.footer.contactInfo}</h4>
+            <h3 className="font-serif text-lg mb-4">{t.footer.contactInfo}</h3>
             <ul className="space-y-3 text-background/70 text-sm">
               <li>Oboźna 58/1</li>
               <li>52-244 Wrocław</li>

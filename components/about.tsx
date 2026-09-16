@@ -20,7 +20,7 @@ export function About() {
             <div className="aspect-[4/5] relative">
               <Image
                 src="/images/project-residential.png"
-                alt="Our team at work"
+                alt={t.about.imageAlt}
                 fill
                 className="object-cover"
               />

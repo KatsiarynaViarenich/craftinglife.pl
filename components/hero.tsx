@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-building.png"
-          alt="Modern building exterior"
+          alt={t.hero.imageAlt}
           fill
           className="object-cover"
           priority
@@ -26,15 +26,15 @@ export function Hero() {
         <div className="max-w-4xl">
           {/* <div className="w-24 sm:w-32 h-[3px] bg-primary mb-10 shadow-sm animate-in slide-in-from-left duration-700"></div> */}
 
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-background leading-tight mb-8">
+          <p className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-background leading-tight mb-8">
             <span className="block">{t.hero.title}</span>
-          </h1>
+          </p>
 
 
 
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-background leading-tight mb-8">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-background leading-tight mb-8">
             <span className="block">{t.hero.titleHighlight}</span>
-          </h2>
+          </h1>
 
 
 

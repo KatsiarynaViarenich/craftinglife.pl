@@ -10,8 +10,9 @@ export type Language = keyof typeof languages;
 export const translations = {
     pl: {
         "meta": {
-            "title": "Crafting Life | Wykończenia Mieszkań",
-            "description": "Profesjonalne wykończenie mieszkań pod klucz. 13 lat doświadczenia, 200+ zrealizowanych projektów. 2 lata rękojmi, wysoka jakość i terminowość."
+            "title": "Crafting Life | Wykończenia Mieszkań Wrocław",
+            "description": "Profesjonalne wykończenia mieszkań pod klucz we Wrocławiu i okolicach. 13 lat doświadczenia, 200+ zrealizowanych projektów. 2 lata rękojmi, wysoka jakość i terminowość.",
+            "keywords": ["wykończenia mieszkań Wrocław", "remonty mieszkań Wrocław", "wykończenia pod klucz Wrocław", "wykończenia wnętrz Wrocław", "ekipa remontowa Wrocław", "generalny wykonawca Wrocław", "crafting life"]
         },
         "nav": {
             "portfolio": "Realizacje",
@@ -24,11 +25,12 @@ export const translations = {
         "hero": {
             "tagline": "Crafting Life - Wykończenia Mieszkań",
             "title": "Crafting Life",
-            "titleHighlight": "Usługi budowlane i wykończeniowe",
+            "titleHighlight": "Wykończenia Mieszkań i Remonty we Wrocławiu",
             "description": "Najwyższa jakość, terminowość i profesjonalne doradztwo. Zapewniamy 2 lata rękojmi na nasze usługi, dbając o każdy szczegół Twojego mieszkania.",
             "description2": "Kochamy to co robimy.",
             "phone": "+48 731 997 440",
             "location": "Wrocław i okolice",
+            "imageAlt": "Nowoczesny budynek wykończony przez Crafting Life we Wrocławiu",
             "cta": "Skontaktuj się z nami",
             "ctaSecondary": "Nasze realizacje",
             "stats": {
@@ -156,6 +158,7 @@ export const translations = {
         },
         "about": {
             "tagline": "Więcej O Nas",
+            "imageAlt": "Ekipa Crafting Life podczas wykończenia mieszkania we Wrocławiu",
             "title": "Stawiamy na ",
             "titleHighlight": "Jakość i Terminowość",
             "description": "Crafting Life to doświadczona ekipa, która od lat zajmuje się wykończeniem mieszkań na najwyższym poziomie. Nasza wiedza i zaangażowanie gwarantują sukces każdego projektu.",
@@ -311,7 +314,8 @@ export const translations = {
     uk: {
         "meta": {
             "title": "Crafting Life | Оздоблення квартир у Вроцлаві",
-            "description": "Професійне оздоблення квартир під ключ у Вроцлаві. 13 років досвіду, понад 200 виконаних проєктів. 2 роки гарантії, висока якість та дотримання термінів."
+            "description": "Професійне оздоблення квартир під ключ у Вроцлаві. 13 років досвіду, понад 200 виконаних проєктів. 2 роки гарантії, висока якість та дотримання термінів.",
+            "keywords": ["оздоблення квартир Вроцлав", "ремонт квартир Вроцлав", "оздоблення під ключ Вроцлав", "будівельна бригада Вроцлав", "crafting life"]
         },
         "nav": {
             "portfolio": "Роботи",
@@ -324,11 +328,12 @@ export const translations = {
         "hero": {
             "tagline": "Crafting Life - Оздоблення Квартир",
             "title": "Crafting Life",
-            "titleHighlight": "Будівельні та оздоблювальні послуги",
+            "titleHighlight": "Оздоблення квартир та ремонт у Вроцлаві",
             "description": "Найвища якість, дотримання термінів та професійні консультації. Ми надаємо 2 роки гарантії на наші послуги, дбаючи про кожну деталь вашої квартири.",
             "description2": "Ми любимо те, що робимо.",
             "phone": "+48 731 997 440",
             "location": "Вроцлав і околиці",
+            "imageAlt": "Сучасна будівля, оздоблена компанією Crafting Life у Вроцлаві",
             "cta": "Зв'яжіться з нами",
             "ctaSecondary": "Наші роботи",
             "stats": {
@@ -440,6 +445,7 @@ export const translations = {
         },
         "about": {
             "tagline": "Більше про нас",
+            "imageAlt": "Команда Crafting Life під час оздоблення квартири у Вроцлаві",
             "title": "Ми Робимо Ставку На ",
             "titleHighlight": "Якість і Дотримання Термінів",
             "description": "Crafting Life - це досвідчена команда, яка роками займається оздобленням квартир на найвищому рівні. Наші знання та відданість справі гарантують успіх кожного проєкту.",
@@ -597,7 +603,8 @@ export const translations = {
     ru: {
         "meta": {
             "title": "Crafting Life | Отделка квартир во Вроцлаве",
-            "description": "Профессиональная отделка квартир под ключ во Вроцлаве. 13 лет опыта, более 200 реализованных проектов. 2 года гарантии, высокое качество и соблюдение сроков."
+            "description": "Профессиональная отделка квартир под ключ во Вроцлаве. 13 лет опыта, более 200 реализованных проектов. 2 года гарантии, высокое качество и соблюдение сроков.",
+            "keywords": ["отделка квартир Вроцлав", "ремонт квартир Вроцлав", "отделка под ключ Вроцлав", "строительная бригада Вроцлав", "crafting life"]
         },
         "nav": {
             "portfolio": "Работы",
@@ -610,11 +617,12 @@ export const translations = {
         "hero": {
             "tagline": "Crafting Life - Отделка Квартир",
             "title": "Crafting Life",
-            "titleHighlight": "Строительно-отделочные услуги",
+            "titleHighlight": "Отделка квартир и ремонт во Вроцлаве",
             "description": "Высочайшее качество, строгое соблюдение сроков и профессиональные консультации. Мы предоставляем 2 года гарантии на наши услуги, заботясь о каждой детали вашей квартиры.",
             "description2": "Мы любим то, что делаем.",
             "phone": "+48 731 997 440",
             "location": "Вроцлав и окрестности",
+            "imageAlt": "Современное здание, отделанное компанией Crafting Life во Вроцлаве",
             "cta": "Свяжитесь с нами",
             "ctaSecondary": "Наши работы",
             "stats": {
@@ -726,6 +734,7 @@ export const translations = {
         },
         "about": {
             "tagline": "Больше о нас",
+            "imageAlt": "Команда Crafting Life во время отделки квартиры во Вроцлаве",
             "title": "Мы Делаем Ставку На ",
             "titleHighlight": "Качество и Соблюдение Сроков",
             "description": "Crafting Life - это опытная команда, которая годами занимается отделкой квартир на высшем уровне. Наши знания и преданность делу гарантируют успех каждого проекта.",
@@ -882,7 +891,8 @@ export const translations = {
     en: {
         "meta": {
             "title": "Crafting Life | Apartment Finishing in Wrocław",
-            "description": "Professional turnkey apartment finishing in Wrocław. 13 years of experience, 200+ completed projects. 2-year warranty, high quality and punctuality."
+            "description": "Professional turnkey apartment finishing in Wrocław. 13 years of experience, 200+ completed projects. 2-year warranty, high quality and punctuality.",
+            "keywords": ["apartment finishing Wrocław", "apartment renovation Wrocław", "turnkey finishing Wrocław", "construction crew Wrocław", "crafting life"]
         },
         "nav": {
             "portfolio": "Portfolio",
@@ -895,11 +905,12 @@ export const translations = {
         "hero": {
             "tagline": "Crafting Life - Apartment Finishing",
             "title": "Crafting Life",
-            "titleHighlight": "Construction and finishing services",
+            "titleHighlight": "Apartment Finishing & Renovations in Wrocław",
             "description": "Highest quality, timely delivery, and professional advice. We provide a 2-year warranty on our services, taking care of every detail of your apartment.",
             "description2": "We love what we do.",
             "phone": "+48 731 997 440",
             "location": "Wrocław and surrounding area",
+            "imageAlt": "Modern building finished by Crafting Life in Wrocław",
             "cta": "Contact Us",
             "ctaSecondary": "Our Work",
             "stats": {
@@ -1011,6 +1022,7 @@ export const translations = {
         },
         "about": {
             "tagline": "More About Us",
+            "imageAlt": "Crafting Life team finishing an apartment in Wrocław",
             "title": "We Focus On ",
             "titleHighlight": "Quality and Timeliness",
             "description": "Crafting Life is an experienced crew that has been dealing with apartment finishing at the highest level for years. Our knowledge and dedication guarantee the success of every project.",
