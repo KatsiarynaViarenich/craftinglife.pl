@@ -6,6 +6,14 @@ const prefixedLocales = locales.filter((locale) => locale !== defaultLocale);
 export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
+    // www is bound as a separate Custom Domain on the same Worker; canonicalize
+    // it to the apex domain so search engines see one host, not a duplicate.
+    if (request.nextUrl.hostname === "www.craftinglife.pl") {
+        const url = request.nextUrl.clone();
+        url.hostname = "craftinglife.pl";
+        return NextResponse.redirect(url, 301);
+    }
+
     const hasPrefixedLocale = prefixedLocales.some(
         (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
     );
