@@ -1,17 +1,37 @@
 "use client"
 
+import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { motion, useScroll, useTransform } from "motion/react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { CountUp } from "@/components/count-up"
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
+const heroContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+}
+
+const heroItem = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE_OUT } },
+}
 
 export function Hero() {
   const { t } = useLanguage()
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] })
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [-30, 30])
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col bg-foreground overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section ref={sectionRef} className="relative min-h-[100dvh] flex flex-col bg-foreground overflow-hidden">
+      <motion.div style={{ y: parallaxY }} className="absolute -inset-y-16 inset-x-0 z-0">
         <Image
           src="/images/hero-building.png"
           alt={t.hero.imageAlt}
@@ -20,40 +40,45 @@ export function Hero() {
           priority
         />
         <div className="absolute inset-0 bg-black/60" />
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 pt-32 pb-16 relative z-10 flex-grow flex flex-col justify-center">
-        <div className="max-w-4xl">
-          {/* <div className="w-24 sm:w-32 h-[3px] bg-primary mb-10 shadow-sm animate-in slide-in-from-left duration-700"></div> */}
-
-          <p className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-background leading-tight mb-8">
+        <motion.div
+          className="max-w-4xl"
+          variants={heroContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            variants={heroItem}
+            className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-background leading-tight mb-8"
+          >
             <span className="block">{t.hero.title}</span>
-          </p>
+          </motion.p>
 
-
-
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-background leading-tight mb-8">
+          <motion.h1
+            variants={heroItem}
+            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-background leading-tight mb-8"
+          >
             <span className="block">{t.hero.titleHighlight}</span>
-          </h1>
+          </motion.h1>
 
-
-
-          <div className="border-l-4 border-primary pl-5 sm:pl-6 mb-8">
+          <motion.div variants={heroItem} className="border-l-4 border-primary pl-5 sm:pl-6 mb-8">
             <p className="text-background/90 text-lg md:text-xl max-w-xl text-background/70 leading-relaxed">
               {t.hero.description}
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap items-center gap-3 text-background/90 text-base md:text-lg mb-10 font-medium tracking-wide">
+          <motion.div
+            variants={heroItem}
+            className="flex flex-wrap items-center gap-3 text-background/90 text-base md:text-lg mb-10 font-medium tracking-wide"
+          >
             <span>{t.hero.location}</span>
-            {/* <span> </span> */}
-
             <span className="w-1.5 h-1.5 rounded-full bg-background/95 shrink-0"></span>
             <span>{t.hero.phone}</span>
+          </motion.div>
 
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
+          <motion.div variants={heroItem} className="flex flex-col sm:flex-row gap-4">
             <Button
               asChild
               size="lg"
@@ -76,8 +101,8 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Stats Bar */}
@@ -85,19 +110,19 @@ export function Hero() {
         <div className="container mx-auto px-6 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <p className="font-serif text-3xl md:text-4xl text-primary">13</p>
+              <CountUp end={13} duration={1.5} className="font-serif text-3xl md:text-4xl text-primary" />
               <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">{t.hero.stats.years}</p>
             </div>
             <div className="text-center">
-              <p className="font-serif text-3xl md:text-4xl text-primary">200+</p>
+              <CountUp end={200} suffix="+" duration={1.8} className="font-serif text-3xl md:text-4xl text-primary" />
               <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">{t.hero.stats.projects}</p>
             </div>
             <div className="text-center">
-              <p className="font-serif text-3xl md:text-4xl text-primary">7</p>
+              <CountUp end={7} duration={1.4} className="font-serif text-3xl md:text-4xl text-primary" />
               <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">{t.hero.stats.countries}</p>
             </div>
             <div className="text-center">
-              <p className="font-serif text-3xl md:text-4xl text-primary">2</p>
+              <CountUp end={2} duration={1.4} className="font-serif text-3xl md:text-4xl text-primary" />
               <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">{t.hero.stats.warranty}</p>
             </div>
           </div>

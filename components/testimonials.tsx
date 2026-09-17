@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { motion } from "motion/react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/language-context"
 import useEmblaCarousel from "embla-carousel-react"
@@ -12,6 +13,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+const VIEWPORT = { once: true, amount: 0, margin: "0px 0px 0px 0px" } as const
 
 type ReviewKey = "review1" | "review2" | "review3" | "review4"
 const reviewKeys: ReviewKey[] = ["review1", "review2", "review3", "review4"]
@@ -65,7 +69,13 @@ export function Testimonials() {
     <section id="testimonials" className="py-24 bg-primary scroll-mt-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT}
+          transition={{ duration: 0.6, ease: EASE_OUT }}
+        >
           <p className="text-primary-foreground/80 uppercase tracking-widest text-sm mb-4">{t.testimonials.tagline}</p>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground mb-6">
             {t.testimonials.title} <span className="">{t.testimonials.titleHighlight}</span>
@@ -73,7 +83,7 @@ export function Testimonials() {
           <p className="text-primary-foreground/70 max-w-2xl mx-auto leading-relaxed">
             {t.testimonials.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonial Carousel */}
         <div

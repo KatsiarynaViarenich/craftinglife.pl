@@ -2,11 +2,13 @@
 
 import Image from "next/image"
 import { useState } from "react"
+import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/language-context"
 import { ProjectLightbox } from "./project-lightbox"
 import { Eye, Images, ArrowUpRight, ArrowRight } from "lucide-react"
-import { title } from "process"
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
 
 type CategoryKey = "all" | "residential" | "commercial"
 const projectsData = [
@@ -152,7 +154,13 @@ export function Portfolio() {
       <section id="projects" className="py-24 bg-background scroll-mt-20">
         <div className="container mx-auto px-6">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0, margin: "0px 0px 0px 0px" }}
+            transition={{ duration: 0.6, ease: EASE_OUT }}
+          >
             <p className="text-primary uppercase tracking-widest text-sm mb-4">{t.portfolio.tagline}</p>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
               {t.portfolio.title} <span className="text-primary">{t.portfolio.titleHighlight}</span>
@@ -160,7 +168,7 @@ export function Portfolio() {
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t.portfolio.description}
             </p>
-          </div>
+          </motion.div>
 
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -182,53 +190,59 @@ export function Portfolio() {
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => {
-              const projectTranslation = t.portfolio.projects[project.titleKey]
-              return (
-                <div
-                  key={project.id}
-                  className="group relative overflow-hidden cursor-pointer"
-                  onMouseEnter={() => setHoveredProject(project.id)}
-                  onMouseLeave={() => setHoveredProject(null)}
-                  onClick={() => handleProjectClick(project)}
-                >
-                  <div className="aspect-[4/3] relative overflow-hidden">
-                    <Image
-                      src={project.images[0]}
-                      alt={projectTranslation.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, index) => {
+                const projectTranslation = t.portfolio.projects[project.titleKey]
+                return (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, y: 35 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20, transition: { duration: 0.3, ease: EASE_OUT } }}
+                    viewport={{ once: true, amount: 0, margin: "0px 0px 0px 0px" }}
+                    transition={{ duration: 0.55, delay: index * 0.07, ease: EASE_OUT }}
+                    className="group relative overflow-hidden cursor-pointer"
+                    onMouseEnter={() => setHoveredProject(project.id)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                    onClick={() => handleProjectClick(project)}
+                  >
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <Image
+                        src={project.images[0]}
+                        alt={projectTranslation.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
 
-                    {/* Image count badge */}
-                    <div className="absolute top-3 right-3 bg-foreground/70 text-card px-2 py-1 text-xs flex items-center gap-1.5 z-10 rounded-sm shadow-sm backdrop-blur-md">
-                      <Images className="w-3.5 h-3.5" />
-                      {project.images.length}
-                    </div>
+                      {/* Image count badge */}
+                      <div className="absolute top-3 right-3 bg-foreground/70 text-card px-2 py-1 text-xs flex items-center gap-1.5 z-10 rounded-sm shadow-sm backdrop-blur-md">
+                        <Images className="w-3.5 h-3.5" />
+                        {project.images.length}
+                      </div>
 
-
-
-                    {/* Minimal gradient + CTA on image */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent pt-12 pb-4 px-5 z-10">
-                      <div className="flex items-center justify-end gap-1.5 text-white/80 group-hover:text-white transition-colors duration-300">
-                        <span className="text-[11px] font-normal">{t.portfolio.viewProject}</span>
-                        <ArrowRight strokeWidth={1} className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
+                      {/* Gradient + CTA slide up on hover */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent pt-12 pb-4 px-5 z-10 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                        <div className="flex items-center justify-end gap-1.5 text-white/80 group-hover:text-white transition-colors duration-300">
+                          <span className="text-[11px] font-normal">{t.portfolio.viewProject}</span>
+                          <ArrowRight strokeWidth={1} className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Project Info Below Image */}
-                  <div className="bg-card px-4 pt-4 pb-2">
-                    <p className="text-primary text-[10px] font-bold uppercase tracking-widest mb-1">
-                      {t.portfolio.filters[project.category]}
-                    </p>
-                    <h3 className="font-serif text-lg text-foreground line-clamp-1">
-                      {projectTranslation.title}
-                    </h3>
-                  </div>
-                </div>
-              )
-            })}
+                    {/* Project Info Below Image */}
+                    <div className="bg-card px-4 pt-4 pb-2">
+                      <p className="text-primary text-[10px] font-bold uppercase tracking-widest mb-1">
+                        {t.portfolio.filters[project.category]}
+                      </p>
+                      <h3 className="font-serif text-lg text-foreground line-clamp-1">
+                        {projectTranslation.title}
+                      </h3>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </AnimatePresence>
           </div>
         </div>
       </section>

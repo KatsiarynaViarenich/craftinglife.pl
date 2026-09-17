@@ -2,7 +2,11 @@
 
 import Image from "next/image"
 import { CheckCircle } from "lucide-react"
+import { motion } from "motion/react"
 import { useLanguage } from "@/lib/language-context"
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+const VIEWPORT = { once: true, amount: 0, margin: "0px 0px 0px 0px" } as const
 
 type HighlightKey = "licensed" | "safety" | "warranty" | "sustainable"
 
@@ -16,7 +20,13 @@ export function About() {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
-          <div className="relative">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: -90 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.7, ease: EASE_OUT }}
+          >
             <div className="aspect-[4/5] relative">
               <Image
                 src="/images/project-residential.png"
@@ -32,10 +42,15 @@ export function About() {
                 {t.hero.stats.years}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content Side */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 90 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.1 }}
+          >
             <p className="text-primary uppercase tracking-widest text-sm mb-4">{t.about.tagline}</p>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
               {t.about.title} <span className="text-primary">{t.about.titleHighlight}</span>
@@ -54,7 +69,7 @@ export function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
