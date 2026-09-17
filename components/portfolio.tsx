@@ -197,9 +197,9 @@ export function Portfolio() {
                   <motion.div
                     key={project.id}
                     layout
-                    initial={{ opacity: 0, y: 35 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20, transition: { duration: 0.3, ease: EASE_OUT } }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    exit={{ opacity: 0, transition: { duration: 0.3, ease: EASE_OUT } }}
                     viewport={{ once: true, amount: 0, margin: "0px 0px 0px 0px" }}
                     transition={{ duration: 0.55, delay: index * 0.07, ease: EASE_OUT }}
                     className="group relative overflow-hidden cursor-pointer"

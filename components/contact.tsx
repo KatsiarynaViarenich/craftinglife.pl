@@ -4,9 +4,6 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { motion } from "motion/react"
 import { useLanguage } from "@/lib/language-context"
 
-const EASE_OUT = [0.16, 1, 0.3, 1] as const
-const VIEWPORT = { once: true, amount: 0, margin: "0px 0px 0px 0px" } as const
-
 export function Contact() {
   const { t } = useLanguage()
 
@@ -34,13 +31,7 @@ export function Contact() {
     <section id="contact" className="py-24 bg-secondary scroll-mt-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={VIEWPORT}
-          transition={{ duration: 0.6, ease: EASE_OUT }}
-        >
+        <div className="text-center mb-16">
           <p className="text-primary uppercase tracking-widest text-sm mb-4">{t.contact.tagline}</p>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
             {t.contact.title} <span className="text-primary">{t.contact.titleHighlight}</span>
@@ -48,21 +39,15 @@ export function Contact() {
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t.contact.description}
           </p>
-        </motion.div>
+        </div>
 
         <div className="max-w-5xl mx-auto">
-          <motion.div
-            className="bg-card p-8 md:p-12 shadow-sm mb-12 rounded-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={VIEWPORT}
-            transition={{ duration: 0.6, ease: EASE_OUT, delay: 0.1 }}
-          >
+          <div className="bg-card p-8 md:p-12 shadow-sm mb-12 rounded-2xl">
             <h3 className="font-serif text-3xl text-foreground mb-4 text-center">{t.contact.info.title}</h3>
             <p className="text-muted-foreground mb-12 text-center max-w-2xl mx-auto">{t.contact.info.description}</p>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {contactInfo.map((item, index) => {
+              {contactInfo.map((item) => {
                 const isPhone = item.icon === Phone
                 const iconCircle = (
                   <motion.div
@@ -75,13 +60,9 @@ export function Contact() {
                 )
 
                 return (
-                  <motion.div
+                  <div
                     key={item.label}
                     className="flex flex-col items-center text-center p-6 bg-primary/5 rounded-2xl transition-colors duration-300 hover:bg-primary/10 hover:shadow-md"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={VIEWPORT}
-                    transition={{ duration: 0.5, delay: index * 0.1, ease: EASE_OUT }}
                   >
                     {isPhone ? (
                       <a href="tel:+48731997440" aria-label={item.label} className="rounded-full">
@@ -99,12 +80,12 @@ export function Contact() {
                     {item.sublabel && (
                       <p className="text-muted-foreground text-sm">{item.sublabel}</p>
                     )}
-                  </motion.div>
+                  </div>
                 )
               })}
             </div>
-          </motion.div>
-          {/* 
+          </div>
+          {/*
           <div className="bg-card p-8 flex flex-col items-center justify-center text-center max-w-lg mx-auto rounded-2xl shadow-sm border border-border/50">
             <MapPin className="h-8 w-8 text-primary mb-3" />
             <p className="text-foreground font-medium text-lg">Ulica Oboźna 58/1</p>
