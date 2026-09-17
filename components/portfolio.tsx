@@ -11,10 +11,6 @@ import { Eye, Images, ArrowUpRight, ArrowRight } from "lucide-react"
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
 
-// Deterministic per-card aspect ratio variety, keyed by project id, so the
-// grid reads as a masonry layout instead of uniform rectangles.
-const ASPECT_RATIOS = ["aspect-[4/3]", "aspect-[3/4]", "aspect-square", "aspect-[4/5]"]
-
 type CategoryKey = "all" | "residential" | "commercial"
 const projectsData = [
   {
@@ -210,12 +206,11 @@ export function Portfolio() {
           </div>
 
           {/* Projects Grid */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => {
                 const projectTranslation = t.portfolio.projects[project.titleKey]
                 const isHovered = hoveredProject === project.id
-                const aspectClass = ASPECT_RATIOS[project.id % ASPECT_RATIOS.length]
                 return (
                   <motion.div
                     key={project.id}
@@ -225,12 +220,12 @@ export function Portfolio() {
                     exit={{ opacity: 0, transition: { duration: 0.3, ease: EASE_OUT } }}
                     viewport={{ once: true, amount: 0, margin: "0px 0px 0px 0px" }}
                     transition={{ duration: 0.55, delay: index * 0.07, ease: EASE_OUT }}
-                    className="group relative overflow-hidden cursor-pointer mb-6 break-inside-avoid"
+                    className="group relative overflow-hidden cursor-pointer"
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                     onClick={() => handleProjectClick(project)}
                   >
-                    <div className={cn("relative overflow-hidden", aspectClass)}>
+                    <div className="aspect-[4/3] relative overflow-hidden">
                       {isHovered ? (
                         project.images.slice(0, 4).map((img, imgIdx) => (
                           <Image
