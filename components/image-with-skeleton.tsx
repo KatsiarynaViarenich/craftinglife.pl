@@ -22,8 +22,8 @@ export function ImageWithSkeleton({ className, onLoad, ...props }: ImageProps) {
       <div
         aria-hidden
         className={cn(
-          "absolute inset-0 bg-muted animate-pulse transition-opacity duration-500",
-          loaded ? "opacity-0" : "opacity-100"
+          "absolute inset-0 bg-muted transition-opacity duration-500",
+          loaded ? "opacity-0" : "opacity-100 animate-pulse"
         )}
       />
       <Image

@@ -144,7 +144,7 @@ export function Portfolio() {
 
     const id = setInterval(() => {
       setHoverImageIndex((i) => (i + 1) % count)
-    }, 4000)
+    }, 3000)
     return () => clearInterval(id)
   }, [hoveredProject])
 
