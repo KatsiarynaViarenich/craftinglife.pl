@@ -49,28 +49,28 @@ export function Contact() {
             <div className="grid md:grid-cols-3 gap-6">
               {contactInfo.map((item) => {
                 const isPhone = item.icon === Phone
-                const iconCircle = (
-                  <motion.div
-                    className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-full mb-6"
-                    animate={isPhone ? { rotate: [0, -12, 12, -8, 8, 0] } : undefined}
-                    transition={isPhone ? { duration: 0.6, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" } : undefined}
-                  >
-                    <item.icon className="h-8 w-8 text-primary" />
-                  </motion.div>
-                )
+                const isEmail = item.icon === Mail
+                const Wrapper = isPhone || isEmail ? "a" : "div"
+                const mailtoHref = `mailto:kontakt@craftinglife.pl?subject=${encodeURIComponent(t.contact.info.mailtoSubject)}&body=${encodeURIComponent(t.contact.info.mailtoBody)}`
+                const wrapperProps = isPhone
+                  ? { href: "tel:+48731997440", "aria-label": item.label }
+                  : isEmail
+                    ? { href: mailtoHref, "aria-label": item.label }
+                    : {}
 
                 return (
-                  <div
+                  <Wrapper
                     key={item.label}
+                    {...wrapperProps}
                     className="flex flex-col items-center text-center p-6 bg-primary/5 rounded-2xl transition-colors duration-300 hover:bg-primary/10 hover:shadow-md"
                   >
-                    {isPhone ? (
-                      <a href="tel:+48731997440" aria-label={item.label} className="rounded-full">
-                        {iconCircle}
-                      </a>
-                    ) : (
-                      iconCircle
-                    )}
+                    <motion.div
+                      className="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-full mb-6"
+                      animate={isPhone ? { rotate: [0, -12, 12, -8, 8, 0] } : undefined}
+                      transition={isPhone ? { duration: 0.6, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" } : undefined}
+                    >
+                      <item.icon className="h-8 w-8 text-primary" />
+                    </motion.div>
                     <p className="text-muted-foreground text-sm uppercase tracking-wider mb-2">
                       {item.label}
                     </p>
@@ -80,7 +80,7 @@ export function Contact() {
                     {item.sublabel && (
                       <p className="text-muted-foreground text-sm">{item.sublabel}</p>
                     )}
-                  </div>
+                  </Wrapper>
                 )
               })}
             </div>

@@ -1,14 +1,19 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/language-context"
 import { ProjectLightbox } from "./project-lightbox"
+import { ImageWithSkeleton } from "@/components/image-with-skeleton"
 import { Eye, Images, ArrowUpRight, ArrowRight } from "lucide-react"
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
+// Deterministic per-card aspect ratio variety, keyed by project id, so the
+// grid reads as a masonry layout instead of uniform rectangles.
+const ASPECT_RATIOS = ["aspect-[4/3]", "aspect-[3/4]", "aspect-square", "aspect-[4/5]"]
 
 type CategoryKey = "all" | "residential" | "commercial"
 const projectsData = [
@@ -128,8 +133,24 @@ const projectsData = [
 export function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all")
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const [hoverImageIndex, setHoverImageIndex] = useState(0)
   const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null)
   const { t } = useLanguage()
+
+  useEffect(() => {
+    if (hoveredProject === null) {
+      setHoverImageIndex(0)
+      return
+    }
+    const project = projectsData.find((p) => p.id === hoveredProject)
+    const count = project ? Math.min(project.images.length, 4) : 0
+    if (count <= 1) return
+
+    const id = setInterval(() => {
+      setHoverImageIndex((i) => (i + 1) % count)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [hoveredProject])
 
   const categories: { key: CategoryKey; label: string }[] = [
     { key: "all", label: t.portfolio.filters.all },
@@ -189,10 +210,12 @@ export function Portfolio() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => {
                 const projectTranslation = t.portfolio.projects[project.titleKey]
+                const isHovered = hoveredProject === project.id
+                const aspectClass = ASPECT_RATIOS[project.id % ASPECT_RATIOS.length]
                 return (
                   <motion.div
                     key={project.id}
@@ -202,18 +225,33 @@ export function Portfolio() {
                     exit={{ opacity: 0, transition: { duration: 0.3, ease: EASE_OUT } }}
                     viewport={{ once: true, amount: 0, margin: "0px 0px 0px 0px" }}
                     transition={{ duration: 0.55, delay: index * 0.07, ease: EASE_OUT }}
-                    className="group relative overflow-hidden cursor-pointer"
+                    className="group relative overflow-hidden cursor-pointer mb-6 break-inside-avoid"
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                     onClick={() => handleProjectClick(project)}
                   >
-                    <div className="aspect-[4/3] relative overflow-hidden">
-                      <Image
-                        src={project.images[0]}
-                        alt={projectTranslation.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                    <div className={cn("relative overflow-hidden", aspectClass)}>
+                      {isHovered ? (
+                        project.images.slice(0, 4).map((img, imgIdx) => (
+                          <Image
+                            key={img}
+                            src={img}
+                            alt={projectTranslation.title}
+                            fill
+                            className={cn(
+                              "object-cover transition-all duration-500 ease-out group-hover:scale-105",
+                              imgIdx === hoverImageIndex ? "opacity-100" : "opacity-0"
+                            )}
+                          />
+                        ))
+                      ) : (
+                        <ImageWithSkeleton
+                          src={project.images[0]}
+                          alt={projectTranslation.title}
+                          fill
+                          className="object-cover transition-all duration-500 ease-out group-hover:scale-105"
+                        />
+                      )}
 
                       {/* Image count badge */}
                       <div className="absolute top-3 right-3 bg-foreground/70 text-card px-2 py-1 text-xs flex items-center gap-1.5 z-10 rounded-sm shadow-sm backdrop-blur-md">

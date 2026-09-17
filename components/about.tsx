@@ -1,8 +1,8 @@
 "use client"
 
-import Image from "next/image"
 import { CheckCircle } from "lucide-react"
 import { motion } from "motion/react"
+import { ImageWithSkeleton } from "@/components/image-with-skeleton"
 import { useLanguage } from "@/lib/language-context"
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
@@ -27,8 +27,8 @@ export function About() {
             viewport={VIEWPORT}
             transition={{ duration: 0.7, ease: EASE_OUT }}
           >
-            <div className="aspect-[4/5] relative">
-              <Image
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <ImageWithSkeleton
                 src="/images/project-residential.png"
                 alt={t.about.imageAlt}
                 fill

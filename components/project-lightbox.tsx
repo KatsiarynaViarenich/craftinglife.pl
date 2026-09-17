@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { useState, useEffect, useCallback } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { ImageWithSkeleton } from "@/components/image-with-skeleton"
 import useEmblaCarousel from "embla-carousel-react"
 
 interface ProjectLightboxProps {
@@ -113,7 +113,7 @@ export function ProjectLightbox({
               {images.map((img, idx) => (
                 <div key={idx} className="flex-[0_0_100%] min-w-0 flex items-center justify-center px-4 md:px-16">
                   <div className="relative w-full h-[60vh] md:h-[70vh]">
-                    <Image
+                    <ImageWithSkeleton
                       src={img}
                       alt={`${projectTitle} – ${idx + 1}`}
                       fill
@@ -168,7 +168,7 @@ export function ProjectLightbox({
                     : "opacity-50 hover:opacity-80"
                 )}
               >
-                <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" sizes="(max-width: 768px) 48px, 64px" />
+                <ImageWithSkeleton src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" sizes="(max-width: 768px) 48px, 64px" />
               </button>
             ))}
           </div>

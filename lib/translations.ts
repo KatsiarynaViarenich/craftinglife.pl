@@ -247,7 +247,9 @@ export const translations = {
                 "call": "Zadzwoń",
                 "callHours": "Pon-Sob: 8:00 - 18:00",
                 "email": "Napisz E-mail",
-                "emailResponse": "Odpowiadamy najszybciej jak to możliwe"
+                "emailResponse": "Odpowiadamy najszybciej jak to możliwe",
+                "mailtoSubject": "Zapytanie o wycenę",
+                "mailtoBody": "Dzień dobry,\n\nChciałbym/-abym umówić się na wycenę.\n\n"
             }
         },
         "footer": {
@@ -536,7 +538,9 @@ export const translations = {
                 "callHours": "Пн-Сб: 8:00 - 18:00",
                 "email": "Напишіть нам",
                 "location": "Wrocław and surrounding area",
-                "emailResponse": "Відповідаємо якнайшвидше"
+                "emailResponse": "Відповідаємо якнайшвидше",
+                "mailtoSubject": "Запит щодо кошторису",
+                "mailtoBody": "Доброго дня,\n\nХотів(ла) б домовитися про кошторис.\n\n"
             }
         },
         "footer": {
@@ -824,7 +828,9 @@ export const translations = {
                 "call": "Позвоните нам",
                 "callHours": "Пн-Сб: 8:00 - 18:00",
                 "email": "Напишите нам",
-                "emailResponse": "Отвечаем как можно быстрее"
+                "emailResponse": "Отвечаем как можно быстрее",
+                "mailtoSubject": "Запрос на смету",
+                "mailtoBody": "Добрый день,\n\nХотел(а) бы договориться о смете.\n\n"
             }
         },
         "footer": {
@@ -1112,7 +1118,9 @@ export const translations = {
                 "call": "Call Us",
                 "callHours": "Mon-Sat: 8AM - 6PM",
                 "email": "Write to Us",
-                "emailResponse": "We reply as soon as possible"
+                "emailResponse": "We reply as soon as possible",
+                "mailtoSubject": "Quote Request",
+                "mailtoBody": "Hello,\n\nI would like to schedule a quote.\n\n"
             }
         },
         "footer": {
