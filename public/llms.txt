@@ -11,8 +11,8 @@
 - Telefon: +48 731 997 440 (PL), +48 695 846 241 (UA/RU)
 - E-mail: kontakt@craftinglife.pl
 - Godziny pracy: pon.-pt. 9:00-23:00, sob. 9:00-17:00
-- Strona: https://craftinglife.pl (polski), https://craftinglife.pl/en (English), https://craftinglife.pl/uk (Українська), https://craftinglife.pl/ru (Русский)
-- Social media: https://www.facebook.com/CraftingLifePL/, https://www.instagram.com/craftinglife.pl/
+- Strona: [polski](https://craftinglife.pl), [English](https://craftinglife.pl/en), [Українська](https://craftinglife.pl/uk), [Русский](https://craftinglife.pl/ru)
+- Social media: [Facebook](https://www.facebook.com/CraftingLifePL/), [Instagram](https://www.instagram.com/craftinglife.pl/)
 
 ## Usługi
 
@@ -35,6 +35,6 @@
 
 ## Strony
 
-- Strona główna: /
-- Polityka prywatności: /privacy
-- Regulamin: /terms
+- [Strona główna](https://craftinglife.pl/)
+- [Polityka prywatności](https://craftinglife.pl/privacy)
+- [Regulamin](https://craftinglife.pl/terms)
