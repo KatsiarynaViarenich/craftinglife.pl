@@ -21,9 +21,9 @@ const projectsData = [
     location: "ul. Czajkowskiego, Wrocław",
     year: "2024",
     images: [
-      "/images/residential/1/1.jpg",
-      "/images/residential/1/2.jpg",
-      "/images/residential/1/3.jpg",
+      "/images/residential/1/1.webp",
+      "/images/residential/1/2.webp",
+      "/images/residential/1/3.webp",
     ],
   },
   {
@@ -34,8 +34,8 @@ const projectsData = [
     location: "Resi4Rent, Grabiszyńska, Wrocław",
     year: "2024",
     images: [
-      "/images/residential/2/1.jpg",
-      "/images/residential/2/2.jpg",
+      "/images/residential/2/1.webp",
+      "/images/residential/2/2.webp",
     ],
   },
   {
@@ -46,8 +46,13 @@ const projectsData = [
     location: "Krucza, Wrocław",
     year: "2024",
     images: [
-      "/images/residential/3/1.jpg",
-      "/images/residential/3/2.jpg",
+      "/images/residential/3/1.webp",
+      "/images/residential/3/2.webp",
+      "/images/residential/3/3.webp",
+      "/images/residential/3/4.webp",
+      "/images/residential/3/5.webp",
+      "/images/residential/3/6.webp",
+
     ],
   },
   {
@@ -58,8 +63,11 @@ const projectsData = [
     location: "Westerbork, Holandia",
     year: "2025",
     images: [
-      "/images/residential/4/1.jpg",
-      "/images/residential/4/2.jpg",
+      "/images/residential/4/1.webp",
+      "/images/residential/4/2.webp",
+      "/images/residential/4/3.webp",
+      "/images/residential/4/4.webp",
+
     ],
   },
   {
@@ -70,9 +78,9 @@ const projectsData = [
     location: "ul. Czajkowskiego, Wrocław",
     year: "2024",
     images: [
-      "/images/residential/5/1.jpg",
-      "/images/residential/5/2.jpg",
-      "/images/residential/5/3.jpg",
+      "/images/residential/5/1.webp",
+      "/images/residential/5/2.webp",
+      "/images/residential/5/3.webp",
     ],
   },
   {
@@ -83,8 +91,11 @@ const projectsData = [
     location: "Psie Pole, Wrocław",
     year: "2024",
     images: [
-      "/images/residential/6/1.jpg",
-      "/images/residential/6/2.jpg",
+      "/images/residential/6/1.webp",
+      "/images/residential/6/2.webp",
+      "/images/residential/6/3.webp",
+      "/images/residential/6/4.webp",
+      "/images/residential/6/5.webp",
     ],
   },
   {
@@ -95,9 +106,9 @@ const projectsData = [
     location: "Grabiszyńska, Wrocław",
     year: "2026",
     images: [
-      "/images/commercial/1/1.jpg",
-      "/images/commercial/1/2.jpg",
-      "/images/commercial/1/3.jpg"
+      "/images/commercial/1/1.webp",
+      "/images/commercial/1/2.webp",
+      "/images/commercial/1/3.webp"
     ],
   },
   {
@@ -108,8 +119,8 @@ const projectsData = [
     location: "Grabiszyńska, Wrocław",
     year: "2026",
     images: [
-      "/images/commercial/2/1.jpg",
-      "/images/commercial/2/2.jpg",
+      "/images/commercial/2/1.webp",
+      "/images/commercial/2/2.webp",
     ],
   },
   {
@@ -120,7 +131,7 @@ const projectsData = [
     location: "Świętego Mikołaja, Wrocław",
     year: "2023",
     images: [
-      "/images/commercial/3/1.jpg"
+      "/images/commercial/3/1.webp"
     ],
   },
 
