@@ -170,12 +170,12 @@ export function Testimonials() {
                   <ChevronLeft className="h-5 w-5" />
                 </button>
 
-                <div className="flex justify-center gap-2">
+                <div className="flex justify-center gap-5">
                   {reviewKeys.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => scrollTo(index)}
-                      className="p-2.5 -m-2.5 flex items-center justify-center"
+                      className="p-2 -m-2 flex items-center justify-center"
                       aria-label={`Go to testimonial ${index + 1}`}
                     >
                       <span
@@ -200,12 +200,12 @@ export function Testimonials() {
               </div>
 
               {/* Desktop dots */}
-              <div className="hidden md:flex justify-center gap-2 absolute -bottom-10 left-0 right-0">
+              <div className="hidden md:flex justify-center gap-5 absolute -bottom-10 left-0 right-0">
                 {reviewKeys.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => scrollTo(index)}
-                    className="p-2.5 -m-2.5 flex items-center justify-center"
+                    className="p-2 -m-2 flex items-center justify-center"
                     aria-label={`Go to testimonial ${index + 1}`}
                   >
                     <span
