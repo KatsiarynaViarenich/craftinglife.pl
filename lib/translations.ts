@@ -20,7 +20,8 @@ export const translations = {
             "about": "O Nas",
             "testimonials": "Opinie",
             "contact": "Kontakt",
-            "getQuote": "Zadzwoń do nas"
+            "getQuote": "Zadzwoń do nas",
+            "changeLanguage": "Zmień język"
         },
         "hero": {
             "tagline": "Crafting Life - Wykończenia Mieszkań",
@@ -325,7 +326,8 @@ export const translations = {
             "about": "Про нас",
             "testimonials": "Відгуки",
             "contact": "Контакти",
-            "getQuote": "Подзвоніть нам"
+            "getQuote": "Подзвоніть нам",
+            "changeLanguage": "Змінити мову"
         },
         "hero": {
             "tagline": "Crafting Life - Оздоблення Квартир",
@@ -616,7 +618,8 @@ export const translations = {
             "about": "О нас",
             "testimonials": "Отзывы",
             "contact": "Контакты",
-            "getQuote": "Позвоните нам"
+            "getQuote": "Позвоните нам",
+            "changeLanguage": "Изменить язык"
         },
         "hero": {
             "tagline": "Crafting Life - Отделка Квартир",
@@ -906,7 +909,8 @@ export const translations = {
             "about": "About",
             "testimonials": "Testimonials",
             "contact": "Contact",
-            "getQuote": "Call Us"
+            "getQuote": "Call Us",
+            "changeLanguage": "Change language"
         },
         "hero": {
             "tagline": "Crafting Life - Apartment Finishing",

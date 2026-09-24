@@ -29,7 +29,7 @@ export function About() {
           >
             <div className="aspect-[4/5] relative overflow-hidden">
               <ImageWithSkeleton
-                src="/images/project-residential.png"
+                src="/images/project-residential.webp"
                 alt={t.about.imageAlt}
                 fill
                 className="object-cover"

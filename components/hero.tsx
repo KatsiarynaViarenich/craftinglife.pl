@@ -33,7 +33,7 @@ export function Hero() {
     <section ref={sectionRef} className="relative min-h-[100dvh] flex flex-col bg-foreground overflow-hidden">
       <motion.div style={{ y: parallaxY }} className="absolute -inset-y-16 inset-x-0 z-0">
         <Image
-          src="/images/hero-building.png"
+          src="/images/hero-building.webp"
           alt={t.hero.imageAlt}
           fill
           className="object-cover"

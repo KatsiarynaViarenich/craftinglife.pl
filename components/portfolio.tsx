@@ -67,7 +67,6 @@ const projectsData = [
       "/images/residential/4/2.webp",
       "/images/residential/4/3.webp",
       "/images/residential/4/4.webp",
-
     ],
   },
   {

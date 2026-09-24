@@ -12,12 +12,12 @@ import { useLanguage } from "@/lib/language-context";
 import { languages, type Language } from "@/lib/translations";
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2">
+        <Button variant="ghost" size="sm" className="gap-2" aria-label={t.nav.changeLanguage}>
           <Globe className="h-4 w-4 shrink-0" />
           <span className="hidden sm:inline">{languages[language]}</span>
         </Button>
