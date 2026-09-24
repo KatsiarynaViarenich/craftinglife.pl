@@ -66,11 +66,11 @@ export function Testimonials() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-primary-foreground/80 uppercase tracking-widest text-sm mb-4">{t.testimonials.tagline}</p>
+          <p className="text-primary-foreground/95 uppercase tracking-widest text-sm mb-4">{t.testimonials.tagline}</p>
           <h2 className="font-serif text-4xl md:text-5xl text-primary-foreground mb-6">
             {t.testimonials.title} <span className="">{t.testimonials.titleHighlight}</span>
           </h2>
-          <p className="text-primary-foreground/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
             {t.testimonials.description}
           </p>
         </div>
@@ -107,7 +107,7 @@ export function Testimonials() {
                           {isLong && (
                             <Dialog onOpenChange={setIsDialogOpen}>
                               <DialogTrigger asChild>
-                                <button className="mt-3 text-primary-foreground/70 hover:text-primary-foreground underline underline-offset-4 text-sm font-medium transition-colors">
+                                <button className="mt-3 text-primary-foreground/85 hover:text-primary-foreground underline underline-offset-4 text-sm font-medium transition-colors">
                                   {t.testimonials.readMore}
                                 </button>
                               </DialogTrigger>
@@ -131,7 +131,7 @@ export function Testimonials() {
                             <p className="font-serif text-xl text-primary-foreground">
                               {t.testimonials.reviews[key].author}
                             </p>
-                            <p className="text-primary-foreground/70 text-sm">
+                            <p className="text-primary-foreground/85 text-sm">
                               {t.testimonials.reviews[key].role} • {t.testimonials.reviews[key].location}
                             </p>
                           </div>
@@ -175,14 +175,18 @@ export function Testimonials() {
                     <button
                       key={index}
                       onClick={() => scrollTo(index)}
-                      className={cn(
-                        "w-2 h-2 rounded-full transition-colors",
-                        index === currentIndex
-                          ? "bg-primary-foreground"
-                          : "bg-primary-foreground/30"
-                      )}
+                      className="p-2.5 -m-2.5 flex items-center justify-center"
                       aria-label={`Go to testimonial ${index + 1}`}
-                    />
+                    >
+                      <span
+                        className={cn(
+                          "w-2 h-2 rounded-full transition-colors block",
+                          index === currentIndex
+                            ? "bg-primary-foreground"
+                            : "bg-primary-foreground/30"
+                        )}
+                      />
+                    </button>
                   ))}
                 </div>
 
@@ -201,14 +205,18 @@ export function Testimonials() {
                   <button
                     key={index}
                     onClick={() => scrollTo(index)}
-                    className={cn(
-                      "w-2 h-2 rounded-full transition-colors",
-                      index === currentIndex
-                        ? "bg-primary-foreground"
-                        : "bg-primary-foreground/30"
-                    )}
+                    className="p-2.5 -m-2.5 flex items-center justify-center"
                     aria-label={`Go to testimonial ${index + 1}`}
-                  />
+                  >
+                    <span
+                      className={cn(
+                        "w-2 h-2 rounded-full transition-colors block",
+                        index === currentIndex
+                          ? "bg-primary-foreground"
+                          : "bg-primary-foreground/30"
+                      )}
+                    />
+                  </button>
                 ))}
               </div>
 

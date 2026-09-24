@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { DM_Serif_Display, Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { siteUrl, siteImage } from '@/lib/site'
 import { translations, type Language } from '@/lib/translations'
 import { locales, defaultLocale, isLocale, localePrefix } from '@/lib/i18n'
@@ -154,7 +153,6 @@ export default async function LocaleLayout({
         <Providers locale={locale}>
           {children}
         </Providers>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
