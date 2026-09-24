@@ -301,7 +301,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Jakie dane zbieramy?",
-                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych, i obecnie nie korzystamy z żadnej analityki odwiedzin. Jedynym zapisywanym przez nas plikiem cookie jest niewielki plik przechowujący wybraną przez Ciebie wersję językową strony, zapisywany wyłącznie po Twoim wyborze w przełączniku języka."
+                    "content": "Nasza strona nie zbiera danych osobowych. Nie posiadamy formularza kontaktowego ani mechanizmów śledzących i profilujących użytkowników w celach marketingowych. Korzystamy wyłącznie z anonimowej, zbiorczej analityki odwiedzin (Cloudflare Web Analytics), która nie wykorzystuje plików cookie i nie identyfikuje użytkownika. Jedynym zapisywanym przez nas plikiem cookie jest niewielki plik przechowujący wybraną przez Ciebie wersję językową strony, zapisywany wyłącznie po Twoim wyborze w przełączniku języka."
                 },
                 "3": {
                     "title": "3. Prawa użytkownika",
@@ -593,7 +593,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Які дані ми збираємо?",
-                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей, і наразі ми не використовуємо жодної аналітики відвідувань. Єдиний файл cookie, який ми зберігаємо, — це невеликий файл, що запам'ятовує обрану Вами мовну версію сайту, який зберігається лише після Вашого вибору в перемикачі мови."
+                    "content": "Наш сайт не збирає персональні дані. У нас немає контактної форми або механізмів відстеження профілю користувачів для маркетингових цілей. Ми використовуємо виключно анонімну, узагальнену аналітику відвідувань (Cloudflare Web Analytics), яка не використовує файли cookie та не ідентифікує користувача. Єдиний файл cookie, який ми зберігаємо, — це невеликий файл, що запам'ятовує обрану Вами мовну версію сайту, який зберігається лише після Вашого вибору в перемикачі мови."
                 },
                 "3": {
                     "title": "3. Права користувача",
@@ -884,7 +884,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. Какие данные мы собираем?",
-                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей, и в настоящее время мы не используем никакой аналитики посещений. Единственный файл cookie, который мы сохраняем, — это небольшой файл, запоминающий выбранную Вами языковую версию сайта, сохраняемый только после Вашего выбора в переключателе языка."
+                    "content": "Наш сайт не собирает личные данные. У нас нет контактной формы или механизмов отслеживания и профилирования пользователей. Мы используем исключительно анонимную, агрегированную аналитику посещений (Cloudflare Web Analytics), которая не использует файлы cookie и не идентифицирует пользователя. Единственный файл cookie, который мы сохраняем, — это небольшой файл, запоминающий выбранную Вами языковую версию сайта, сохраняемый только после Вашего выбора в переключателе языка."
                 },
                 "3": {
                     "title": "3. Права пользователя",
@@ -1175,7 +1175,7 @@ export const translations = {
                 },
                 "2": {
                     "title": "2. What data do we collect?",
-                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes, and we currently do not use any visit analytics. The only cookie we store is a small file remembering the language version of the site you selected, saved only after you choose it in the language switcher."
+                    "content": "Our website does not collect personal data. We do not have a contact form or mechanisms for user profiling or tracking for marketing purposes. We use only anonymous, aggregated visit analytics (Cloudflare Web Analytics), which does not use cookies and does not identify the user. The only cookie we store is a small file remembering the language version of the site you selected, saved only after you choose it in the language switcher."
                 },
                 "3": {
                     "title": "3. User Rights",
