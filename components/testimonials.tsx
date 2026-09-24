@@ -107,7 +107,7 @@ export function Testimonials() {
                           {isLong && (
                             <Dialog onOpenChange={setIsDialogOpen}>
                               <DialogTrigger asChild>
-                                <button className="mt-3 text-primary-foreground/85 hover:text-primary-foreground underline underline-offset-4 text-sm font-medium transition-colors">
+                                <button className="mt-3 text-primary-foreground/95 hover:text-primary-foreground underline underline-offset-4 text-sm font-medium transition-colors">
                                   {t.testimonials.readMore}
                                 </button>
                               </DialogTrigger>
@@ -131,7 +131,7 @@ export function Testimonials() {
                             <p className="font-serif text-xl text-primary-foreground">
                               {t.testimonials.reviews[key].author}
                             </p>
-                            <p className="text-primary-foreground/85 text-sm">
+                            <p className="text-primary-foreground/95 text-sm">
                               {t.testimonials.reviews[key].role} • {t.testimonials.reviews[key].location}
                             </p>
                           </div>
