@@ -11,6 +11,12 @@ import { Eye, Images, ArrowUpRight, ArrowRight } from "lucide-react"
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
 
+// Grid cards only ever need a small image; the full-size file is reserved
+// for the lightbox where photos are viewed much larger.
+function toThumb(src: string) {
+  return src.replace(/\.webp$/, "-thumb.webp")
+}
+
 type CategoryKey = "all" | "residential" | "commercial"
 const projectsData = [
   {
@@ -240,7 +246,7 @@ export function Portfolio() {
                         project.images.slice(0, 4).map((img, imgIdx) => (
                           <Image
                             key={img}
-                            src={img}
+                            src={toThumb(img)}
                             alt={projectTranslation.title}
                             fill
                             className={cn(
@@ -251,7 +257,7 @@ export function Portfolio() {
                         ))
                       ) : (
                         <ImageWithSkeleton
-                          src={project.images[0]}
+                          src={toThumb(project.images[0])}
                           alt={projectTranslation.title}
                           fill
                           className="object-cover transition-all duration-500 ease-out group-hover:scale-105"
