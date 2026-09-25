@@ -19,8 +19,8 @@ const heroContainer = {
 }
 
 const heroItem = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE_OUT } },
+  hidden: {},
+  visible: {},
 }
 
 export function Hero() {
