@@ -17,6 +17,12 @@ function toThumb(src: string) {
   return src.replace(/\.webp$/, "-thumb.webp")
 }
 
+// Even smaller variant for narrow (<768px) viewports, served via <picture>
+// so phones don't download the same file as desktop.
+function toThumbSm(src: string) {
+  return src.replace(/\.webp$/, "-thumb-sm.webp")
+}
+
 type CategoryKey = "all" | "residential" | "commercial"
 const projectsData = [
   {
@@ -244,20 +250,23 @@ export function Portfolio() {
                     <div className="aspect-[4/3] relative overflow-hidden">
                       {isHovered ? (
                         project.images.slice(0, 4).map((img, imgIdx) => (
-                          <Image
-                            key={img}
-                            src={toThumb(img)}
-                            alt={projectTranslation.title}
-                            fill
-                            className={cn(
-                              "object-cover transition-all duration-500 ease-out group-hover:scale-105",
-                              imgIdx === hoverImageIndex ? "opacity-100" : "opacity-0"
-                            )}
-                          />
+                          <picture key={img}>
+                            <source media="(max-width: 767px)" srcSet={toThumbSm(img)} />
+                            <Image
+                              src={toThumb(img)}
+                              alt={projectTranslation.title}
+                              fill
+                              className={cn(
+                                "object-cover transition-all duration-500 ease-out group-hover:scale-105",
+                                imgIdx === hoverImageIndex ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </picture>
                         ))
                       ) : (
                         <ImageWithSkeleton
                           src={toThumb(project.images[0])}
+                          srcMobile={toThumbSm(project.images[0])}
                           alt={projectTranslation.title}
                           fill
                           className="object-cover transition-all duration-500 ease-out group-hover:scale-105"
