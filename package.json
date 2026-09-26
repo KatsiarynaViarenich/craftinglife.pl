@@ -44,10 +44,10 @@
     "wrangler": "^4.92.0"
   },
   "browserslist": [
-    "chrome >= 64",
-    "edge >= 79",
-    "firefox >= 67",
-    "opera >= 51",
-    "safari >= 12"
+    "chrome >= 93",
+    "edge >= 93",
+    "firefox >= 92",
+    "opera >= 79",
+    "safari >= 15.4"
   ]
 }
