@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
@@ -39,15 +38,18 @@ const projectsData = [
     ],
   },
   {
-    id: 2,
-    title: "Residential Project 2",
-    titleKey: "2" as const,
-    category: "commercial" as const,
-    location: "Resi4Rent, Grabiszyńska, Wrocław",
+    id: 6,
+    title: "Residential Project 6",
+    titleKey: "6" as const,
+    category: "residential" as const,
+    location: "Psie Pole, Wrocław",
     year: "2024",
     images: [
-      "/images/residential/2/1.webp",
-      "/images/residential/2/2.webp",
+      "/images/residential/6/1.webp",
+      "/images/residential/6/2.webp",
+      "/images/residential/6/3.webp",
+      "/images/residential/6/4.webp",
+      "/images/residential/6/5.webp",
     ],
   },
   {
@@ -95,21 +97,6 @@ const projectsData = [
     ],
   },
   {
-    id: 6,
-    title: "Residential Project 6",
-    titleKey: "6" as const,
-    category: "residential" as const,
-    location: "Psie Pole, Wrocław",
-    year: "2024",
-    images: [
-      "/images/residential/6/1.webp",
-      "/images/residential/6/2.webp",
-      "/images/residential/6/3.webp",
-      "/images/residential/6/4.webp",
-      "/images/residential/6/5.webp",
-    ],
-  },
-  {
     id: 7,
     title: "Commercial Project 1",
     titleKey: "7" as const,
@@ -120,6 +107,18 @@ const projectsData = [
       "/images/commercial/1/1.webp",
       "/images/commercial/1/2.webp",
       "/images/commercial/1/3.webp"
+    ],
+  },
+  {
+    id: 2,
+    title: "Residential Project 2",
+    titleKey: "2" as const,
+    category: "commercial" as const,
+    location: "Resi4Rent, Grabiszyńska, Wrocław",
+    year: "2024",
+    images: [
+      "/images/residential/2/1.webp",
+      "/images/residential/2/2.webp",
     ],
   },
   {
@@ -248,30 +247,19 @@ export function Portfolio() {
                     onClick={() => handleProjectClick(project)}
                   >
                     <div className="aspect-[4/3] relative overflow-hidden">
-                      {isHovered ? (
-                        project.images.slice(0, 4).map((img, imgIdx) => (
-                          <picture key={img}>
-                            <source media="(max-width: 767px)" srcSet={toThumbSm(img)} />
-                            <Image
-                              src={toThumb(img)}
-                              alt={projectTranslation.title}
-                              fill
-                              className={cn(
-                                "object-cover transition-all duration-500 ease-out group-hover:scale-105",
-                                imgIdx === hoverImageIndex ? "opacity-100" : "opacity-0"
-                              )}
-                            />
-                          </picture>
-                        ))
-                      ) : (
-                        <ImageWithSkeleton
-                          src={toThumb(project.images[0])}
-                          srcMobile={toThumbSm(project.images[0])}
-                          alt={projectTranslation.title}
-                          fill
-                          className="object-cover transition-all duration-500 ease-out group-hover:scale-105"
-                        />
-                      )}
+                      <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+                        {project.images.slice(0, 4).map((img, imgIdx) => (
+                          <ImageWithSkeleton
+                            key={img}
+                            src={toThumb(img)}
+                            srcMobile={toThumbSm(img)}
+                            alt={projectTranslation.title}
+                            fill
+                            visible={imgIdx === (isHovered ? hoverImageIndex : 0)}
+                            className="object-cover"
+                          />
+                        ))}
+                      </div>
 
                       {/* Image count badge */}
                       <div className="absolute top-3 right-3 bg-foreground/70 text-card px-2 py-1 text-xs flex items-center gap-1.5 z-10 rounded-sm shadow-sm backdrop-blur-md">

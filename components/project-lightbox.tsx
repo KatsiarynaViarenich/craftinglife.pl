@@ -119,7 +119,9 @@ export function ProjectLightbox({
                       fill
                       className="object-contain"
                       priority={idx === 0}
+                      loading={idx === 0 ? undefined : "eager"}
                       sizes="100vw"
+                      dark
                     />
                   </div>
                 </div>
@@ -168,7 +170,7 @@ export function ProjectLightbox({
                     : "opacity-50 hover:opacity-80"
                 )}
               >
-                <ImageWithSkeleton src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" sizes="(max-width: 768px) 48px, 64px" />
+                <ImageWithSkeleton src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" sizes="(max-width: 768px) 48px, 64px" dark />
               </button>
             ))}
           </div>

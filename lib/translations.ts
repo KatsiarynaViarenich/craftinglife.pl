@@ -80,12 +80,12 @@ export const translations = {
                     "description": "Wykonanie instalacji elektrycznej i hydraulicznej oraz układanie płytek w kuchni."
                 },
                 "6": {
-                    "title": "Nowoczesna Łazienka",
-                    "description": "Wykończenie łazienki z dbałością o każdy detal."
+                    "title": "Nowoczesne Mieszkanie",
+                    "description": "Wykończenie mieszkania z dbałością o każdy detal."
                 },
                 "7": {
-                    "title": "Praktyczna Łazienka",
-                    "description": "Szybkie wykończenie łazienki."
+                    "title": "Mieszkanie pod Wynajem",
+                    "description": "Szybkie i sprawne wykończenie mieszkania pod wynajem."
                 },
                 "8": {
                     "title": "Łazienki w Parafii",
@@ -386,12 +386,12 @@ export const translations = {
                     "description": "Виконання електромонтажних та сантехнічних робіт, а також укладання плитки на кухні."
                 },
                 "6": {
-                    "title": "Сучасна ванна кімната",
-                    "description": "Оздоблення ванної кімнати з увагою до кожної деталі."
+                    "title": "Сучасна квартира",
+                    "description": "Оздоблення квартири з увагою до кожної деталі."
                 },
                 "7": {
-                    "title": "Практична ванна кімната",
-                    "description": "Швидке оздоблення ванної кімнати."
+                    "title": "Квартира під оренду",
+                    "description": "Швидке та якісне оздоблення квартири під оренду."
                 },
                 "8": {
                     "title": "Ванні кімнати в парафії",
@@ -678,12 +678,12 @@ export const translations = {
                     "description": "Выполнение электромонтажных и сантехнических работ, а также укладка плитки на кухне."
                 },
                 "6": {
-                    "title": "Современная ванная комната",
-                    "description": "Отделка ванной комнаты с вниманием к каждой детали."
+                    "title": "Современная квартира",
+                    "description": "Отделка квартиры с вниманием к каждой детали."
                 },
                 "7": {
-                    "title": "Практичная ванная комната",
-                    "description": "Быстрая отделка ванной комнаты."
+                    "title": "Квартира под аренду",
+                    "description": "Быстрая и качественная отделка квартиры под аренду."
                 },
                 "8": {
                     "title": "Ванные комнаты в приходе",
@@ -969,12 +969,12 @@ export const translations = {
                     "description": "Electrical and plumbing installations and tiling in the kitchen."
                 },
                 "6": {
-                    "title": "Modern Bathroom",
-                    "description": "Bathroom finishing with attention to every detail."
+                    "title": "Modern Apartment",
+                    "description": "Apartment finishing with attention to every detail."
                 },
                 "7": {
-                    "title": "Practical Bathroom",
-                    "description": "Quick bathroom finishing."
+                    "title": "Apartment for Rent",
+                    "description": "Fast, quality finishing for a rental apartment."
                 },
                 "8": {
                     "title": "Parish Bathrooms",

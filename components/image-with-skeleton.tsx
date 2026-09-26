@@ -10,11 +10,21 @@ type ImageWithSkeletonProps = ImageProps & {
   // image. next/image can't do this itself while images.unoptimized is on
   // (it skips srcSet generation entirely in that mode).
   srcMobile?: string
+  // External visibility intent (e.g. "is this the active slide in a
+  // crossfade stack"), independent of whether the file itself has finished
+  // loading. The image only ever shows once BOTH are true, so a caller can
+  // toggle this without fighting the load-in fade below.
+  visible?: boolean
+  // The default skeleton (bg-muted) is a light tone that works on the
+  // light page background, but reads as a jarring white flash on a dark
+  // surface (e.g. the lightbox). Callers on a dark background pass this.
+  dark?: boolean
 }
 
-export function ImageWithSkeleton({ className, onLoad, srcMobile, ...props }: ImageWithSkeletonProps) {
+export function ImageWithSkeleton({ className, onLoad, srcMobile, visible = true, dark = false, ...props }: ImageWithSkeletonProps) {
   const [loaded, setLoaded] = useState(false)
   const imgRef = useRef<HTMLImageElement>(null)
+  const shown = loaded && visible
 
   // If the browser already had this image cached, it can finish loading
   // before React attaches the onLoad listener below, so that event never
@@ -29,7 +39,7 @@ export function ImageWithSkeleton({ className, onLoad, srcMobile, ...props }: Im
     <Image
       {...props}
       ref={imgRef}
-      className={cn(className, "transition-opacity duration-500", loaded ? "opacity-100" : "opacity-0")}
+      className={cn(className, "transition-opacity duration-500", shown ? "opacity-100" : "opacity-0")}
       onLoad={(event) => {
         setLoaded(true)
         onLoad?.(event)
@@ -42,7 +52,8 @@ export function ImageWithSkeleton({ className, onLoad, srcMobile, ...props }: Im
       <div
         aria-hidden
         className={cn(
-          "absolute inset-0 bg-muted transition-opacity duration-500",
+          "absolute inset-0 transition-opacity duration-500",
+          dark ? "bg-white/10" : "bg-muted",
           loaded ? "opacity-0" : "opacity-100 animate-pulse"
         )}
       />
